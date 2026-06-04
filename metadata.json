@@ -1,0 +1,6 @@
+{
+  "name": "Ayush Prakash",
+  "description": "The personal website of Ayush Prakash, showcasing writing from ayushprakash.substack.com in a highly polished, minimal layout inspired by Vitalik Buterin's personal blog.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
