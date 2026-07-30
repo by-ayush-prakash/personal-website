@@ -1,13 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-const IMGS = ['/img/pod-1.jpg','/img/pod-3.jpg','/img/pod-6.jpg','/img/pod-2.jpg','/img/row-4.jpg'];
-const pod = (await getCollection('podcast')).map(e => ({ ...e.data, kind: 'Podcast', href: `/podcast/${e.data.slug}` }));
-const wri = (await getCollection('writing')).map(e => ({ ...e.data, kind: 'Essay', href: `/writing/${e.data.slug}` }));
+import { themeImage } from '../lib/themeImage';
+const pod = (await getCollection('podcast')).map((e) => ({
+  title: e.data.title,
+  description: e.data.description,
+  date: e.data.date,
+  theme: e.data.theme as string | undefined,
+  duration: e.data.duration as string | undefined,
+  kind: 'Podcast',
+  href: `/podcast/${e.data.slug}`,
+}));
+const wri = (await getCollection('writing')).map((e) => ({
+  title: e.data.title,
+  description: e.data.description,
+  date: e.data.date,
+  theme: undefined as string | undefined,
+  duration: undefined as string | undefined,
+  kind: 'Essay',
+  href: `/writing/${e.data.slug}`,
+}));
 const latest = [...pod, ...wri]
   .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
   .slice(0, 5)
-  .map((it, i) => ({ ...it, img: IMGS[i % IMGS.length] }));
+  .map((it) => ({ ...it, img: themeImage(it.theme, 'card') }));
 
 ---
 
@@ -25,9 +41,9 @@ const latest = [...pod, ...wri]
 
   <div class="proof"><div class="lbl">Research</div><div class="body">&ldquo;The Infinity of the Brain and the Void of the Machine&rdquo;, co-authored with Karl Friston in <a href="https://www.themontrealreview.com/Articles/the_infinity_of_the_brain_and_the_void_of_the_machine.php" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--hair)">The Montreal Review</a></div></div>
   <hr class="hair" />
-  <div class="proof"><div class="lbl">Book</div><div class="body">AI for Gen Z, the first treatment of what AI means for the generation growing up inside it</div></div>
+  <div class="proof"><div class="lbl">Book</div><div class="body"><a href="/books" style="text-decoration:none;border-bottom:1px solid var(--hair)">AI for Gen Z</a>, the first treatment of what AI means for the generation growing up inside it</div></div>
   <hr class="hair" />
-  <div class="proof"><div class="lbl">Practice</div><div class="body">Chief of Staff at New Sapience. Non-LLM machine cognition, from the design level.</div></div>
+  <div class="proof"><div class="lbl">Practice</div><div class="body">Chief of Staff at <a href="https://newsapience.com" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--hair)">New Sapience</a>. Non-LLM machine cognition, from the design level.</div></div>
   <hr class="rule" />
 
   <div class="feature">

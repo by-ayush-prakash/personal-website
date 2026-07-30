@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { themeImage } from '../../lib/themeImage';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -17,7 +18,7 @@ const { Content } = await render(entry);
 <BaseLayout
   title={`${entry.data.title} | Ayush Prakash`}
   description={entry.data.description}
-  ogImage="/img/pod-3.jpg"
+  ogImage={themeImage(entry.data.theme, 'wide')}
 >
   <div class="hero" style="text-align:left;padding-bottom:0">
     <p class="kicker">{entry.data.theme ?? 'Podcast'}{entry.data.duration ? ` · ${entry.data.duration}` : ''}</p>

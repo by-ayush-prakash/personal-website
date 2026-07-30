@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { THEMES } from '../../content.config';
+import { themeImage } from '../../lib/themeImage';
 
 const episodes = (await getCollection('podcast')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -12,7 +13,7 @@ const featured = episodes.filter((ep) => ep.data.featured);
 <BaseLayout
   title="Podcast | Ayush Prakash"
   description="150+ conversations with researchers, scientists, and philosophers. The podcast is a research instrument."
-  ogImage="/img/pod-3.jpg"
+  ogImage="/img/theme-cognition-wide.jpg"
 >
   <div class="hero">
     <h1 class="dsub" style="max-width:22ch">150+ conversations with researchers, scientists, and philosophers.</h1>
@@ -26,7 +27,7 @@ const featured = episodes.filter((ep) => ep.data.featured);
       <div class="strip">
         {featured.map((ep) => (
           <a class="card" href={`/podcast/${ep.data.slug}`}>
-            <div class="ph"><img src="/img/pod-3.jpg" alt="" /></div>
+            <div class="ph"><img src={themeImage(ep.data.theme, 'card')} alt="" loading="lazy" /></div>
             <div class="meta">{ep.data.theme ?? 'Podcast'} &middot; {ep.data.duration ?? ''}</div>
             <div class="ct">{ep.data.title}</div>
             <div class="cd">{ep.data.description}</div>
@@ -36,9 +37,9 @@ const featured = episodes.filter((ep) => ep.data.featured);
     </div>
   )}
 
-  <div style="padding-top:clamp(50px,7vw,86px)">
+  <div data-archive style="padding-top:clamp(50px,7vw,86px)">
     <div class="sectionhead"><h2>All Episodes</h2><span class="meta">{episodes.length} items</span></div>
-    <div class="filters" data-archive>
+    <div class="filters">
       <button class="on" data-theme="all">All</button>
       {THEMES.map((theme) => <button data-theme={theme}>{theme}</button>)}
     </div>
@@ -48,11 +49,12 @@ const featured = episodes.filter((ep) => ep.data.featured);
     </div>
     {episodes.map((ep) => (
       <a
-        class="row noimg"
+        class="row"
         href={`/podcast/${ep.data.slug}`}
         data-theme={ep.data.theme ?? ''}
         data-search={`${ep.data.title} ${ep.data.description}`.toLowerCase()}
       >
+        <div class="thumb"><img src={themeImage(ep.data.theme, 'sq')} alt="" loading="lazy" /></div>
         <div>
           <div class="rt">{ep.data.title}</div>
           <div class="rd">{ep.data.description}</div>
