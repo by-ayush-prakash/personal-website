@@ -1,0 +1,13 @@
+---
+title: "“What Screens Are Doing to Us” – Dr. Pamela Gay on Growing Up in the Digital Age"
+slug: "what-screens-are-doing-to-us-dr-pamela-gay-on-growing-up-in-the-digital-age"
+date: "2025-02-28T15:00:00.000Z"
+description: "This is episode 119 of the Gen Z Diplomat Podcast. Pamela L. Gay is an American astronomer, educator, podcaster, and writer, best known for her work in astronomical podcasting and citizen science astronomy projects. She is a senior education and communication specialist and senior scientist for t..."
+sourceUrl: "https://podcasters.spotify.com/pod/show/ayushprakashpodcast/episodes/What-Screens-Are-Doing-to-Us--Dr--Pamela-Gay-on-Growing-Up-in-the-Digital-Age-e2v87i1"
+duration: "01:04:01"
+audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/98884609/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-1-23%2F395360760-44100-2-361e00a93b491.mp3"
+featured: false
+theme: "Cognition & Development"
+---
+
+<p>This is episode 119 of the Gen Z Diplomat Podcast. </p><p><br /></p><p>Pamela L. Gay is an American astronomer, educator, podcaster, and writer, best known for her work in astronomical podcasting and citizen science astronomy projects. She is a senior education and communication specialist and senior scientist for the Planetary Science Institute.</p><p><br /></p><p>0:00: How are you a digital native? </p><p>0:47: Was there a fear of technology?</p><p>2:47: Is there digital narcissism? </p><p>6:00: What moment did you notice tech was ruining your social facet? </p><p>8:33: Liberation versus Limitation</p><p>12:25: The current moment of AI</p><p>16:55: Job automation</p><p>21:11: Working smarter, not harder with AI</p><p>24:46: “The algorithm must know more than I do” </p><p>28:41: When is AI going to take over? It already has</p><p>31:30: What if AI agents take off? </p><p>37:36: Why are we creating inhumane technologies?</p><p>40:45: What does Pamela do to augment her sense-making? </p><p>42:43: Solving problems on Earth before going to the stars</p><p>46:14: What happened to the future? </p><p>51:21: How did we build an environment that doesn’t work for us?</p><p>57:10: If you had a magic wand, and could solve one problem in the world, what would it be? </p><p>58:25: What gives you hope in the world? </p><p>59:31: On podcasters grifting their audiences</p><p>59:59: Donate to Junglekeepers!!!!</p><p>1:00:35: What’s your favourite exoplanet? </p><p>1:01:42: Is the exploration of exoplanets fun? </p><p>1:03:34: Find Pamela online</p><p><br /></p><p>Connect with Pamela: </p><p> https://www.starstryder.com/about-me/</p><p> https://www.youtube.com/c/pamelagay</p>

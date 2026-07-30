@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const episodes = await getCollection('podcast');
+  return episodes.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  title={`${entry.data.title} | Ayush Prakash`}
+  description={entry.data.description}
+  ogImage="/img/pod-3.jpg"
+>
+  <div class="hero" style="text-align:left;padding-bottom:0">
+    <p class="kicker">{entry.data.theme ?? 'Podcast'}{entry.data.duration ? ` · ${entry.data.duration}` : ''}</p>
+    <h1 class="dtitle" style="margin-top:20px;max-width:none">{entry.data.title}</h1>
+    <p class="lede" style="margin-left:0">{entry.data.description}</p>
+  </div>
+
+  <div style="padding:30px 0">
+    <audio controls style="width:100%" src={entry.data.audioUrl}>
+      Your browser does not support the audio element. <a href={entry.data.audioUrl}>Download the episode</a>.
+    </audio>
+  </div>
+  <hr class="hair" />
+
+  <div class="prose" style="padding-top:30px;max-width:none">
+    <Content />
+  </div>
+
+  <p style="padding-top:24px">
+    <a href={entry.data.sourceUrl} style="border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:2px">Listen on the original platform &rarr;</a>
+  </p>
+</BaseLayout>

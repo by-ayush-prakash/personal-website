@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { THEMES } from '../../content.config';
+
+const episodes = (await getCollection('podcast')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const featured = episodes.filter((ep) => ep.data.featured);
+---
+
+<BaseLayout
+  title="Podcast | Ayush Prakash"
+  description="150+ conversations with researchers, scientists, and philosophers. The podcast is a research instrument."
+  ogImage="/img/pod-3.jpg"
+>
+  <div class="hero">
+    <h1 class="dsub" style="max-width:22ch">150+ conversations with researchers, scientists, and philosophers.</h1>
+    <p class="lede">The podcast is a research instrument. Episodes feed directly into published work.</p>
+  </div>
+  <hr class="rule" />
+
+  {featured.length > 0 && (
+    <div style="padding-top:38px">
+      <div class="sectionhead"><h2>Start Here</h2><span class="meta">Conversations that inform the report &rarr;</span></div>
+      <div class="strip">
+        {featured.map((ep) => (
+          <a class="card" href={`/podcast/${ep.data.slug}`}>
+            <div class="ph"><img src="/img/pod-3.jpg" alt="" /></div>
+            <div class="meta">{ep.data.theme ?? 'Podcast'} &middot; {ep.data.duration ?? ''}</div>
+            <div class="ct">{ep.data.title}</div>
+            <div class="cd">{ep.data.description}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div style="padding-top:clamp(50px,7vw,86px)">
+    <div class="sectionhead"><h2>All Episodes</h2><span class="meta">{episodes.length} items</span></div>
+    <div class="filters" data-archive>
+      <button class="on" data-theme="all">All</button>
+      {THEMES.map((theme) => <button data-theme={theme}>{theme}</button>)}
+    </div>
+    <div class="tools">
+      <input type="text" placeholder="Search episodes" />
+      <button type="button" data-action="surprise">Surprise me</button>
+    </div>
+    {episodes.map((ep) => (
+      <a
+        class="row noimg"
+        href={`/podcast/${ep.data.slug}`}
+        data-theme={ep.data.theme ?? ''}
+        data-search={`${ep.data.title} ${ep.data.description}`.toLowerCase()}
+      >
+        <div>
+          <div class="rt">{ep.data.title}</div>
+          <div class="rd">{ep.data.description}</div>
+        </div>
+        <div class="rm">{ep.data.theme ?? 'Podcast'} &middot; {ep.data.duration ?? ''}</div>
+      </a>
+    ))}
+  </div>
+
+  <script>
+    import '../../scripts/archiveFilters';
+  </script>
+</BaseLayout>

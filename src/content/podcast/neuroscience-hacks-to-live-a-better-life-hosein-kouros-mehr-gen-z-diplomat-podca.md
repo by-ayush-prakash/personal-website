@@ -1,0 +1,12 @@
+---
+title: "Neuroscience Hacks to Live a Better Life - Hosein Kouros-Mehr | Gen Z Diplomat Podcast #85"
+slug: "neuroscience-hacks-to-live-a-better-life-hosein-kouros-mehr-gen-z-diplomat-podca"
+date: "2024-04-19T15:14:15.000Z"
+description: "Hosein Kouros-Mehr, MD, PhD is an author and physician-scientist who has spent over two decades in cancer research and drug development. Thanks to his background, Hosein recognized the extraordinary ramifications of a recent scientific discovery: the default mode network (DMN), which drives the &..."
+sourceUrl: "https://podcasters.spotify.com/pod/show/ayushprakashpodcast/episodes/Neuroscience-Hacks-to-Live-a-Better-Life---Hosein-Kouros-Mehr--Gen-Z-Diplomat-Podcast-85-e2ik16s"
+duration: "01:05:16"
+audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/85639836/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-3-19%2F374880300-44100-2-6caa292cb02cd.mp3"
+featured: false
+---
+
+<p>Hosein Kouros-Mehr, MD, PhD is an author and physician-scientist who has spent over two decades in cancer research and drug development.</p><p><br></p><p>Thanks to his background, Hosein recognized the extraordinary ramifications of a recent scientific discovery: the default mode network (DMN), which drives the &quot;wandering mind&quot; and the ego, influencing our thoughts, emotions, and behaviors. Recognizing the profound impact of this breakthrough on self-understanding (both from clinical and personal experience), he wrote Break Through: Master Your Default Mode and Thrive to help readers master the DMN and live happier, more fulfilling lives. This book was recently endorsed by Rick Doblin, Founder of MAPS.</p><p><br></p><p>An avid reader and student of science, philosophy, and religion, Hosein draws on a depth of understanding from medical science, neuroscience, Buddhism, Judeo-Christian teachings, and ancient philosophy. Break Through connects the medical and spiritual realms to help readers unlock health and well-being and awaken their higher self, opening the doors to new possibilities and experiences. Visit www.yourdefaultmode.com for more information.</p><p><br></p><p>Hosein is also the author of two novels, Extinction 6 and Project Bodi: Awaken the Power of Insight, that explore how mindfulness cultivates insights and scientific innovation. He lives in Los Angeles, California, with his wife and children.</p><p><br></p><p>#neuroscience #brain #mind</p>

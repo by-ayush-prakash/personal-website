@@ -9,7 +9,10 @@ const navItems = [
   { href: '/about', label: 'About' },
 ];
 
-const { pathname } = Astro.url;
+// Normalise trailing slashes, and treat /podcast/<slug> as "Podcast" being active.
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isActive = (href) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
 ---
 
 <header class="site">
@@ -17,7 +20,7 @@ const { pathname } = Astro.url;
     <a href="/" class="wordmark">Ayush Prakash</a>
     <nav class="main">
       {navItems.map((item) => (
-        <a href={item.href} class={pathname === item.href ? 'on' : undefined}>{item.label}</a>
+        <a href={item.href} class={isActive(item.href) ? 'on' : undefined}>{item.label}</a>
       ))}
     </nav>
   </div>

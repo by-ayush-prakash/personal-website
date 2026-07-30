@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const IMGS = ['/img/pod-1.jpg','/img/pod-3.jpg','/img/pod-6.jpg','/img/pod-2.jpg','/img/row-4.jpg'];
+const pod = (await getCollection('podcast')).map(e => ({ ...e.data, kind: 'Podcast', href: `/podcast/${e.data.slug}` }));
+const wri = (await getCollection('writing')).map(e => ({ ...e.data, kind: 'Essay', href: `/writing/${e.data.slug}` }));
+const latest = [...pod, ...wri]
+  .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+  .slice(0, 5)
+  .map((it, i) => ({ ...it, img: IMGS[i % IMGS.length] }));
+
 ---
 
 <BaseLayout
@@ -14,7 +23,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   <hr class="rule" />
 
-  <div class="proof"><div class="lbl">Research</div><div class="body">Co-authored with Karl Friston in <u>The Montreal Review</u></div></div>
+  <div class="proof"><div class="lbl">Research</div><div class="body">&ldquo;The Infinity of the Brain and the Void of the Machine&rdquo;, co-authored with Karl Friston in <a href="https://www.themontrealreview.com/Articles/the_infinity_of_the_brain_and_the_void_of_the_machine.php" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--hair)">The Montreal Review</a></div></div>
   <hr class="hair" />
   <div class="proof"><div class="lbl">Book</div><div class="body">AI for Gen Z, the first treatment of what AI means for the generation growing up inside it</div></div>
   <hr class="hair" />
@@ -25,7 +34,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="kicker">Out Now</p>
     <h2 class="dtitle">AI for Gen Z</h2>
     <div class="cover"><img src="/img/book-genz.jpg" alt="AI for Gen Z book cover" /></div>
-    <div class="buyline"><a href="#">Buy</a><span class="s">|</span><a href="#">Read an excerpt</a></div>
+    <div class="pillrow"><a class="pill" href="https://www.amazon.com/dp/0981182135" target="_blank" rel="noopener">Buy the book</a></div>
   </div>
 
   <hr class="rule" />
@@ -33,15 +42,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="kicker">Current Project</p>
     <h2 class="dtitle">The First AI-Native Generation</h2>
     <p class="lede">A flagship research report on how sustained interaction with person-like AI affects human development. First edition November 2026.</p>
-    <div class="buyline"><a href="/research">Follow the research</a></div>
+    <div class="pillrow"><a class="pill" href="/research">Follow the research</a></div>
   </div>
 
   <div class="sectionhead"><h2>Latest</h2><a class="r" href="/writing">View All</a></div>
   <div class="strip">
-    <a class="card" href="/writing"><div class="ph"><img src="/img/pod-1.jpg" alt="" /></div><div class="meta">Essay &middot; 12 min</div><div class="ct">Society is Pathology</div><div class="cd">What we call dysfunction may be the system working as designed.</div></a>
-    <a class="card" href="/podcast"><div class="ph"><img src="/img/pod-3.jpg" alt="" /></div><div class="meta">Podcast &middot; 01:12:40</div><div class="ct">Karl Friston</div><div class="cd">What a mind is doing when it is doing anything at all.</div></a>
-    <a class="card" href="/writing"><div class="ph"><img src="/img/pod-6.jpg" alt="" /></div><div class="meta">Essay &middot; 9 min</div><div class="ct">The Machine That Does Not Guess</div><div class="cd">Why deterministic systems fail differently.</div></a>
-    <a class="card" href="/podcast"><div class="ph"><img src="/img/pod-2.jpg" alt="" /></div><div class="meta">Podcast &middot; 00:54:18</div><div class="ct">Avi Loeb</div><div class="cd">When the data outruns the consensus.</div></a>
-    <a class="card" href="/writing"><div class="ph"><img src="/img/row-4.jpg" alt="" /></div><div class="meta">Essay &middot; 7 min</div><div class="ct">Notes Toward a Responsible AI</div><div class="cd">A first sketch of the framework, published early.</div></a>
+    {latest.map((it) => (
+      <a class="card" href={it.href}>
+        <div class="ph"><img src={it.img} alt="" /></div>
+        <div class="meta">{it.kind}{'duration' in it && it.duration ? ` \u00b7 ${it.duration}` : ''}</div>
+        <div class="ct">{it.title}</div>
+        <div class="cd">{it.description.length > 110 ? it.description.slice(0, 110).trimEnd() + '\u2026' : it.description}</div>
+      </a>
+    ))}
   </div>
 </BaseLayout>

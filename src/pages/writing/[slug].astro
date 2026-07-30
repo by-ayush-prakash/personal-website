@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing');
+  return posts.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  title={`${entry.data.title} | Ayush Prakash`}
+  description={entry.data.description}
+>
+  <div class="hero" style="text-align:left;padding-bottom:0">
+    <p class="kicker">Essay{entry.data.theme ? ` · ${entry.data.theme}` : ''}</p>
+    <h1 class="dtitle" style="margin-top:20px;max-width:none">{entry.data.title}</h1>
+  </div>
+  <hr class="hair" style="margin-top:24px" />
+
+  <div class="prose" style="padding-top:30px;max-width:none">
+    <Content />
+  </div>
+
+  {entry.data.truncated ? (
+    <p style="padding-top:24px">
+      This post continues on Substack.
+      <a href={entry.data.sourceUrl} style="border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:2px">Continue reading &rarr;</a>
+    </p>
+  ) : (
+    <p style="padding-top:24px">
+      <a href={entry.data.sourceUrl} style="border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:2px">View on Substack &rarr;</a>
+    </p>
+  )}
+</BaseLayout>

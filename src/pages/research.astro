@@ -13,11 +13,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   <div class="banner"><img src="/img/wide-1.jpg" alt="" /></div>
   <hr class="rule" />
-  <div style="padding:clamp(40px,6vw,80px) 0">
-    <p class="kicker" style="margin-bottom:22px">Core Question</p>
+  <div class="band">
+    <div class="band-inner">
+      <p class="kicker" style="margin-bottom:22px">Core Question</p>
     <p class="bigq">How do sustained interactions with person-like AI systems affect cognition, identity formation, agency, relationships, epistemic development, and beliefs about minds, especially among young people?</p>
+      <div class="pillrow" style="justify-content:flex-start">
+        <a class="pill" href="/podcast">Listen to the research</a>
+        <a class="pill pill--ghost" href="/writing">Read the writing</a>
+      </div>
+    </div>
   </div>
-  <hr class="rule" />
   <div style="padding-top:34px">
     <p class="kicker" style="margin-bottom:20px">Subsidiary Questions</p>
     <div class="subq"><div class="n">1</div><div><div class="t">Off-loading</div><div class="b">Which cognitive capacities do young people stop developing when AI systems perform the thinking, remembering, and deciding for them?</div></div></div>
@@ -36,7 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   <div style="padding-top:clamp(50px,7vw,90px);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(30px,5vw,66px)">
     <div><p class="kicker" style="margin-bottom:15px">Methods</p><div class="prose"><p>Transparent literature review, structured expert interviews, and one original evidence component scoped with qualified academic and ethics support. Findings, hypotheses, and open questions are labeled as such.</p></div></div>
-    <div><p class="kicker" style="margin-bottom:15px">Advisory Circle</p><div class="prose"><p>In formation across developmental psychology, cognitive science, AI governance, and philosophy of mind.</p><p>[NAMES + ONE-LINE ROLES AS SECURED]</p></div></div>
+    <div><p class="kicker" style="margin-bottom:15px">Advisory Circle</p><div class="prose"><p>In formation across developmental psychology, cognitive science, AI governance, and philosophy of mind.</p>{/* TODO: add advisory names + one-line roles here as they are secured */}</div></div>
     <div><p class="kicker" style="margin-bottom:15px">Corrections Log</p><div class="prose"><p>No corrections to date. Errors in published work are logged here with dates.</p></div></div>
   </div>
 </BaseLayout>

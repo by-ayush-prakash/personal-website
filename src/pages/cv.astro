@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const episodes = await getCollection('podcast');
+const essays = await getCollection('writing');
+const featured = episodes.filter(e => e.data.featured);
+const firstEpisode = episodes.map(e => new Date(e.data.date)).sort((a,b)=>a.getTime()-b.getTime())[0];
+const startYear = firstEpisode ? firstEpisode.getFullYear() : 2021;
+---
+
+<BaseLayout
+  title="CV | Ayush Prakash"
+  description="Curriculum vitae of Ayush Prakash: research on person-like AI and human development, publications, talks, and professional experience."
+>
+  <div class="hero">
+    <h1 class="dsub">Curriculum Vitae</h1>
+    <p class="lede">Ayush Prakash. Montreal. English and French. ORCID <a href="https://orcid.org/0009-0003-5287-9694" target="_blank" rel="noopener" style="border-bottom:1px solid var(--hair);text-decoration:none">0009-0003-5287-9694</a>.</p>
+  </div>
+  <hr class="rule" />
+
+  <div style="padding-top:34px">
+    <div class="sectionhead"><h2>Research</h2></div>
+    <div class="subq"><div class="n">—</div><div>
+      <div class="t">The First AI-Native Generation</div>
+      <div class="b">Flagship research report on how sustained interaction with person-like AI affects cognition, identity, agency, and epistemic development. Accompanying policy brief and a Developmentally Responsible AI Framework. First edition November 2026.</div>
+    </div></div>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Books</h2></div>
+    <a class="row noimg" href="https://www.amazon.com/dp/0981182135" target="_blank" rel="noopener">
+      <div><div class="rt">AI for Gen Z</div><div class="rd">What artificial intelligence means for the first generation growing up inside it.</div></div>
+      <div class="rm">Book</div>
+    </a>
+    <div class="row noimg">
+      <div><div class="rt">The Transcendence of Money</div><div class="rd">On the future of value.</div></div>
+      <div class="rm">November 2026</div>
+    </div>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Publications</h2></div>
+    <a class="row noimg" href="https://www.themontrealreview.com/Articles/the_infinity_of_the_brain_and_the_void_of_the_machine.php" target="_blank" rel="noopener">
+      <div><div class="rt">The Infinity of the Brain and the Void of the Machine</div><div class="rd">With Karl Friston. Invited by The Montreal Review to develop a named series and related symposiums.</div></div>
+      <div class="rm">The Montreal Review</div>
+    </a>
+    <a class="row noimg" href="https://www.psychologytoday.com/sg/blog/understanding-hypnosis/202511/the-risks-of-ai-and-social-media-for-the-developing-brain" target="_blank" rel="noopener">
+      <div><div class="rt">The Risks of AI and Social Media for the Developing Brain</div><div class="rd">With Dr. Ran Anbar. What clinicians see in young people who grew up inside algorithmic systems.</div></div>
+      <div class="rm">Psychology Today &middot; Nov 2025</div>
+    </a>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Selected Talks</h2></div>
+    <div class="talk"><h3>The First AI-Native Generation</h3><p>What sustained interaction with person-like AI does to development.</p></div>
+    <div class="talk"><h3>Developmentally Responsible AI</h3><p>A framework for building systems that young people grow up inside.</p></div>
+    <div class="talk"><h3>Digital Minds, Human Attribution, and Public Trust</h3><p>Why people believe machines have minds, and what follows for policy.</p></div>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Experience</h2></div>
+    <div class="subq"><div class="n">—</div><div>
+      <div class="t">Chief of Staff, New Sapience <span style="color:var(--muted);font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none">Dec 2025 &ndash; Present</span></div>
+      <div class="b">Deterministic-AI company founded by veterans of DARPA, NASA, and the NSA. Business operations and institutional capital strategy, working on non-LLM machine cognition alongside the technical founding team.</div>
+    </div></div>
+    <div class="subq"><div class="n">—</div><div>
+      <div class="t">Director, Centre for Innovating the Future</div>
+      <div class="b">Montreal venture studio housing Mantic Publishing, AI Skepticism, and the Ayush Prakash Podcast. Research agendas, editorial programs, and convening concepts on responsible AI, public trust, governance, and human cognition.</div>
+    </div></div>
+    <div class="subq"><div class="n">&middot;</div><div>
+      <div class="t">Creative Director, New Sapience <span style="color:var(--muted);font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none">Feb 2023 &ndash; Dec 2025</span></div>
+      <div class="b">AI narrative, editorial strategy, and investor communications behind two equity rounds raising $3.5M from 2,000+ investors.</div>
+    </div></div>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Public Scholarship</h2></div>
+    <div class="subq"><div class="n">—</div><div>
+      <div class="t">The Ayush Prakash Podcast</div>
+      <div class="b">{episodes.length} published conversations with researchers, scientists, and philosophers since {startYear}, including Karl Friston and Avi Loeb. {featured.length} episodes are designated as source material for the current research programme. {essays.length} published essays.</div>
+    </div></div>
+  </div>
+
+  <div style="padding-top:clamp(40px,6vw,72px)">
+    <div class="sectionhead"><h2>Education</h2></div>
+    <div class="subq"><div class="n">&middot;</div><div>
+      <div class="t">Bachelor of Arts, Philosophy</div>
+      <div class="b">Toronto Metropolitan University, 2023.</div>
+    </div></div>
+  </div>
+</BaseLayout>

@@ -25,6 +25,23 @@ const { title, description, ogImage } = Astro.props;
       rel="stylesheet"
     />
     <SEOHead title={title} description={description} ogImage={ogImage} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ayush Prakash",
+      "url": "https://ayushprakash.com",
+      "jobTitle": "Chief of Staff",
+      "worksFor": { "@type": "Organization", "name": "New Sapience" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Montreal", "addressCountry": "CA" },
+      "knowsLanguage": ["en", "fr"],
+      "identifier": "https://orcid.org/0009-0003-5287-9694",
+      "sameAs": [
+        "https://orcid.org/0009-0003-5287-9694",
+        "https://www.linkedin.com/in/prakash-ayush/",
+        "https://ayushprakash.substack.com",
+        "https://www.youtube.com/@ayushprakashofficial"
+      ]
+    })} />
   </head>
   <body>
     <div class="wrap">

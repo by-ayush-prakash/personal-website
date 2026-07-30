@@ -1,0 +1,12 @@
+---
+title: "Are We Designed For Monogamy? How Polyamory and Sexual Fluidity Affect Relationships - Alex Rosalez "
+slug: "are-we-designed-for-monogamy-how-polyamory-and-sexual-fluidity-affect-relationsh"
+date: "2025-10-23T17:00:00.000Z"
+description: "Alex Rosalez is an AI/ML product executive with over 25 years of experience in tech. He is the host of the incredible podcast, \"Transformational Journeys,\" where he explores how to get people to their most authentic selves. In this episode, we cover: - Why society's rigid categories around sexual..."
+sourceUrl: "https://podcasters.spotify.com/pod/show/ayushprakashpodcast/episodes/Are-We-Designed-For-Monogamy--How-Polyamory-and-Sexual-Fluidity-Affect-Relationships---Alex-Rosalez-e39nd65"
+duration: "01:16:21"
+audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/109867653/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-9-19%2F409517726-44100-2-a68763ae376de.mp3"
+featured: false
+---
+
+<p>Alex Rosalez is an AI/ML product executive with over 25 years of experience in tech. He is the host of the incredible podcast, "Transformational Journeys," where he explores how to get people to their most authentic selves. </p><p><br /></p><p>In this episode, we cover: </p><p>- Why society's rigid categories around sexual orientation and relationship structures are being challenged and redefined in the 21st century. </p><p>- How homosexuality and heterosexuality exist on a spectrum rather than as fixed binary identities</p><p>- Why monogamy has been held as the gold standard of committed relationships despite mounting evidence that it may not suit everyone's emotional or relational needs</p><p>- What the rise of polyamory and ethical non-monogamy reveals about human connection and our capacity for multiple forms of love, </p><p>- How young people navigating their sexuality and relationship preferences can honor their authentic desires while respecting boundaries and practicing genuine consent</p><p>- Why the shame, stigma, and social conditioning around non-traditional relationships prevent many from exploring what truly fulfills them</p><p>- What practical frameworks anyone can use to assess whether monogamy, polyamory, or another relationship structure aligns with their values and emotional architecture</p><p><br /></p><p>Connect with Alex: </p><p> <a href="https://studio.youtube.com/channel/UCUtRKnM8ED5smWRA4F4sofQ" rel="ugc noopener noreferrer" target="_blank"> @TransformationalJourneys </a> </p>

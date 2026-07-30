@@ -1,0 +1,13 @@
+---
+title: "Being Human In The Age of AI - Jeff Burningham"
+slug: "being-human-in-the-age-of-ai-jeff-burningham"
+date: "2025-11-17T15:05:48.000Z"
+description: "Jeff Burningham is a tech entrepreneur, investor, and author of the book \"The Last Book Written by a Human: Becoming Wise in the Age of AI.\" In a world where artificial intelligence is rapidly advancing to outperform humans at nearly every measurable task, threatening to render human creativity,..."
+sourceUrl: "https://podcasters.spotify.com/pod/show/ayushprakashpodcast/episodes/Being-Human-In-The-Age-of-AI---Jeff-Burningham-e3avqal"
+duration: "01:06:44"
+audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/111191829/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-14%2F412492258-44100-2-ce09e9c5d5db9.mp3"
+featured: false
+theme: "Human–AI Relationships"
+---
+
+<p>Jeff Burningham is a tech entrepreneur, investor, and author of the book "The Last Book Written by a Human: Becoming Wise in the Age of AI." In a world where artificial intelligence is rapidly advancing to outperform humans at nearly every measurable task, threatening to render human creativity, labor, and even consciousness itself obsolete, how do we reclaim what truly makes us human before we hand the reins entirely to machines?In this episode, we cover:- Why AI represents both humanity's greatest opportunity for evolution and our most urgent existential threat—and how our response will determine which path we take- How humans have become "human doings" obsessed with output and achievement, losing sight of the essential art of simply being present and alive- What it actually means to be human in an age where machines can think, create, and produce faster and better than we ever will—and why our mortality, vulnerability, and capacity to fail are our greatest advantages - Why AI is not our adversary but a mirror that reflects and amplifies who we already are, forcing us to confront our unconscious patterns, false beliefs, and outdated systems- How we must evolve beyond the old paradigms of capitalism, religion, and politics that prioritize power and resources over collective human flourishing and genuine connection- What wisdom, love, and deep human presence look like as the antidotes to an age dominated by machines—and why leading with these qualities is how we consciously participate in upgrading human existence- Why this moment in history is a wake-up call for our species to embrace our full potential, reclaim our capacity for authentic relationship, and write humanity's next, wiser chapter before it's too lateConnect with Jeff: https://www.jeffburningham.comAmazon: https://www.amazon.com/Last-Book-Written-Human-Becoming/dp/1637634560

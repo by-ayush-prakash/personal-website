@@ -1,0 +1,13 @@
+---
+title: "AI Expert: AI can't replace artists (but it will destroy this...) - Dr. Maya Ackerman"
+slug: "ai-expert-ai-can-t-replace-artists-but-it-will-destroy-this-dr-maya-ackerman"
+date: "2025-12-05T15:00:00.000Z"
+description: "Dr. Maya Ackerman is a world-renowned AI researcher, generative AI pioneer, and CEO and Co-Founder of WaveAI. She is an Associate Professor at Santa Clara University and the author of &quot;Creative Machines: AI, Art &amp; Us.&quot; In a world where artificial intelligence is rapidly transforming..."
+sourceUrl: "https://podcasters.spotify.com/pod/show/ayushprakashpodcast/episodes/AI-Expert-AI-cant-replace-artists-but-it-will-destroy-this------Dr--Maya-Ackerman-e3b79op"
+duration: "00:39:59"
+audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/111437017/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-10-20%2F412812833-44100-2-0b0fe1a40946b.mp3"
+featured: false
+theme: "Human–AI Relationships"
+---
+
+<p>Dr. Maya Ackerman is a world-renowned AI researcher, generative AI pioneer, and CEO and Co-Founder of WaveAI. She is an Associate Professor at Santa Clara University and the author of &quot;Creative Machines: AI, Art &amp; Us.&quot; </p><p><br></p><p>In a world where artificial intelligence is rapidly transforming every creative domain, from music and visual art to writing and design, and where fear about AI replacing human artists has reached fever pitch, how do we understand what machines can actually create versus what only humans can imagine, and what does this technological shift reveal about the nature of creativity itself?</p><p><br></p><p>In this episode, we cover:</p><p><br></p><p>What creativity and hallucinations really are</p><p><br></p><p>What the actual capabilities and limitations of creative AI systems reveal about both machine and human intelligence</p><p><br></p><p>How generative AI exposes the hidden assumptions, biases, and blind spots embedded in human society</p><p><br></p><p>Why AI-generated art, music, and writing are fundamentally mirrors that reflect human ingenuity, cultural values, and collective unconscious back at us rather than representing truly independent machine consciousness</p><p><br></p><p>How creative professionals can use AI as a tool to enhance rather than replace their work, and what frameworks exist for maintaining human agency and artistic vision while leveraging computational capabilities</p><p><br></p><p>What the rise of generative AI means for the future of creative industries, the economics of art-making, and whether machines expanding creative accessibility democratizes creativity or devalues it</p><p><br></p><p>Why fixing AI ethics alone is insufficient</p>

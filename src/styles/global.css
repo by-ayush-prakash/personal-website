@@ -6,7 +6,7 @@
   --gut:clamp(20px,5vw,64px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .wrap{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
 .rule{border:0;border-top:1px solid var(--rule)}
@@ -120,3 +120,50 @@ table.outputs td+td{text-align:right;font-family:var(--sans);font-size:12.5px;co
 footer.site{padding:34px 0 66px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--hair)}
 footer.site a{font-size:12.5px;color:var(--muted);text-decoration:none;margin-right:20px}
 footer.site a:hover{color:var(--ink)}
+
+/* --- typographic wrap control: no single hanging words --- */
+.dsub, .dtitle, .bigq, .sectionhead h2, .card .ct, .card .cd,
+.row .rt, .row .rd, .talk h3, .news .h, .feature .dtitle {
+  text-wrap: balance;
+}
+.lede, .prose p, .subq .b, .talk p, .meta, table.outputs td {
+  text-wrap: pretty;
+}
+
+/* --- full-bleed dark band (use once, on Research) --- */
+.band{
+  background:var(--ink);
+  color:var(--paper);
+  margin-inline:calc(50% - 50vw);
+  padding-block:clamp(60px,9vw,132px);
+}
+.band-inner{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+.band .kicker,.band .meta,.band .subq .n{color:rgba(253,252,249,.60)}
+.band .subq{border-top-color:rgba(253,252,249,.24)}
+.band .sectionhead{border-bottom-color:rgba(253,252,249,.55)}
+.band hr.hair{border-top-color:rgba(253,252,249,.24)}
+.band a{color:var(--paper)}
+
+/* --- pill CTA --- */
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:12.5px;letter-spacing:.02em;
+  padding:11px 24px;border-radius:999px;text-decoration:none;
+  background:var(--ink);color:var(--paper);border:1px solid var(--ink);
+  transition:background .15s,color .15s;
+}
+.pill:hover{background:transparent;color:var(--ink)}
+.pill--ghost{background:transparent;color:var(--ink)}
+.pill--ghost:hover{background:var(--ink);color:var(--paper)}
+.band .pill{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.band .pill:hover{background:transparent;color:var(--paper)}
+.pillrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:clamp(38px,5vw,64px)}
+
+/* --- large centred serif footer nav --- */
+.footnav{text-align:center;padding:clamp(60px,9vw,120px) 0 0}
+.footnav a{
+  display:block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,5vw,58px);line-height:1.26;
+  text-decoration:none;color:var(--ink);
+}
+.footnav a:hover{opacity:.5}

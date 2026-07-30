@@ -1,7 +1,30 @@
 ---
+const bigNav = [
+  { href: '/research', label: 'Research' },
+  { href: '/podcast', label: 'Podcast' },
+  { href: '/writing', label: 'Writing' },
+];
+const small = [
+  { href: 'https://ayushprakash.substack.com', label: 'Substack', ext: true },
+  { href: 'https://www.youtube.com/@ayushprakashofficial', label: 'YouTube', ext: true },
+  { href: 'https://www.linkedin.com/in/prakash-ayush/', label: 'LinkedIn', ext: true },
+  { href: 'https://orcid.org/0009-0003-5287-9694', label: 'ORCID', ext: true },
+  { href: '/books', label: 'Books' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/about', label: 'About' },
+];
 ---
 
 <hr class="hair" />
+
+<nav class="footnav">
+  {bigNav.map((item) => <a href={item.href}>{item.label}</a>)}
+  <div class="pillrow">
+    <a class="pill" href="mailto:ayush@innovatingfuture.com">Get in touch</a>
+    <a class="pill pill--ghost" href="/cv">Curriculum vitae</a>
+  </div>
+</nav>
+
 <div class="news">
   <div class="h">Never miss the research. Sign up for occasional notes from Ayush Prakash.</div>
   <form class="f">
@@ -9,9 +32,12 @@
     <button type="submit">Submit</button>
   </form>
 </div>
+
 <footer class="site">
   <div>
-    <a href="#">Substack</a><a href="#">YouTube</a><a href="#">LinkedIn</a><a href="#">Contact</a>
+    {small.map((item) => (
+      <a href={item.href} {...(item.ext ? { target: '_blank', rel: 'noopener' } : {})}>{item.label}</a>
+    ))}
   </div>
   <div class="meta">&copy; 2026 Ayush Prakash &middot; Montreal</div>
 </footer>
