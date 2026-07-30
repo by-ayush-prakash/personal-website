@@ -1,0 +1,24 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/podcast', label: 'Podcast' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/books', label: 'Books' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/about', label: 'About' },
+];
+
+const { pathname } = Astro.url;
+---
+
+<header class="site">
+  <div class="mastrow">
+    <a href="/" class="wordmark">Ayush Prakash</a>
+    <nav class="main">
+      {navItems.map((item) => (
+        <a href={item.href} class={pathname === item.href ? 'on' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
