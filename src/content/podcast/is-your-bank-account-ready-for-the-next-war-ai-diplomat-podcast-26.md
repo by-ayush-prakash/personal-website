@@ -9,4 +9,4 @@ audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/54477123/https%3A%2F%2Fd3ct
 featured: false
 ---
 
-<p>Is the next war right around the corner? In this episode, Ayush Prakash takes a deeper dive into the history of Israel and Iran, why their conflict exists today, and how this could affect the rest of society. &nbsp;&nbsp;</p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg&nbsp;</p><p>For business inquiries: conversationmachines@gmail.com &nbsp;</p><p>For more information about Ayush: https://ayushprakash.com</p>
+<p>Is the next war right around the corner? In this episode, Ayush Prakash takes a deeper dive into the history of Israel and Iran, why their conflict exists today, and how this could affect the rest of society. </p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg </p><p>For business inquiries: conversationmachines@gmail.com </p><p>For more information about Ayush: https://ayushprakash.com</p>

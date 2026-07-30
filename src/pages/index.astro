@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { themeImage } from '../lib/themeImage';
+import { themeImage, themeAlt } from '../lib/themeImage';
 const pod = (await getCollection('podcast')).map((e) => ({
   title: e.data.title,
   description: e.data.description,
@@ -64,7 +64,7 @@ const latest = [...pod, ...wri]
   <div class="strip">
     {latest.map((it) => (
       <a class="card" href={it.href}>
-        <div class="ph"><img src={it.img} alt="" /></div>
+        <div class="ph"><img src={it.img} alt={themeAlt(it.theme)} /></div>
         <div class="meta">{it.kind}{'duration' in it && it.duration ? ` \u00b7 ${it.duration}` : ''}</div>
         <div class="ct">{it.title}</div>
         <div class="cd">{it.description.length > 110 ? it.description.slice(0, 110).trimEnd() + '\u2026' : it.description}</div>

@@ -9,4 +9,4 @@ audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/53535529/https%3A%2F%2Fd3ct
 featured: false
 ---
 
-<p>We need to spread the message of the looming recession so people can get prepared. In this episode, Ayush Prakash talks about some aspects of this recession, and most importantly how we can prepare ourselves as a society to come out of it with as little injury as possible.&nbsp;</p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>For business inquiries: conversationmachines@gmail.com</p><p>For more information about Ayush: https://ayushprakash.com</p>
+<p>We need to spread the message of the looming recession so people can get prepared. In this episode, Ayush Prakash talks about some aspects of this recession, and most importantly how we can prepare ourselves as a society to come out of it with as little injury as possible. </p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>For business inquiries: conversationmachines@gmail.com</p><p>For more information about Ayush: https://ayushprakash.com</p>

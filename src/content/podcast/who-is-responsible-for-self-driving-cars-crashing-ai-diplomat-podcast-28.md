@@ -10,4 +10,4 @@ featured: false
 theme: "Governance & Society"
 ---
 
-<p>Who is at fault when a self-driving car crashes? Accountability must be given, but to who? In this episode, Ayush Prakash talks about who he thinks should be held accountable when autonomous vehicles inevitably crash. Hint: it's not who you think.&nbsp;</p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow us on TikTok: @ai.diplomat</p><p>Follow us on Twitter: @aidiplomat</p><p>Follow us on @aidiplomat</p><p>For more information about Ayush: https://ayushprakash.com</p>
+<p>Who is at fault when a self-driving car crashes? Accountability must be given, but to who? In this episode, Ayush Prakash talks about who he thinks should be held accountable when autonomous vehicles inevitably crash. Hint: it's not who you think. </p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow us on TikTok: @ai.diplomat</p><p>Follow us on Twitter: @aidiplomat</p><p>Follow us on @aidiplomat</p><p>For more information about Ayush: https://ayushprakash.com</p>

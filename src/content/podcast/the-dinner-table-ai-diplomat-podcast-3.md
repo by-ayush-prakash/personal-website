@@ -9,4 +9,4 @@ audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/43853779/https%3A%2F%2Fd3ct
 featured: false
 ---
 
-<p>In this episode, Ayush Prakash discusses a hypothetical scenario. Imagine your child coming home from a job interview and discussing being rejected; all because the workplace preferred AI and robots. How do you console your child in this situation?&nbsp;</p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow Ayush on Twitter: https://twitter.com/ayushprakashh</p><p>Follow Ayush on https://www.</p><p>For more information about Ayush: https://ayushprakash.com</p>
+<p>In this episode, Ayush Prakash discusses a hypothetical scenario. Imagine your child coming home from a job interview and discussing being rejected; all because the workplace preferred AI and robots. How do you console your child in this situation? </p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow Ayush on Twitter: https://twitter.com/ayushprakashh</p><p>Follow Ayush on https://www.</p><p>For more information about Ayush: https://ayushprakash.com</p>

@@ -12,14 +12,18 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const raw = (entry.data.description ?? '').trim();
+const metaDescription =
+  raw.length >= 70 ? raw : `${entry.data.title}. An essay by Ayush Prakash on AI, cognition, and human development.`;
 ---
 
 <BaseLayout
   title={`${entry.data.title} | Ayush Prakash`}
-  description={entry.data.description}
+  description={metaDescription}
 >
   <div class="hero" style="text-align:left;padding-bottom:0">
-    <p class="kicker">Essay{entry.data.theme ? ` · ${entry.data.theme}` : ''}</p>
+    <p class="kicker">Essay{entry.data.truncated ? ' · Excerpt' : ''}</p>
     <h1 class="dtitle" style="margin-top:20px;max-width:none">{entry.data.title}</h1>
   </div>
   <hr class="hair" style="margin-top:24px" />

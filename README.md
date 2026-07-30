@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# ayushprakash.com
 
-# Run and deploy your AI Studio app
+Personal site of Ayush Prakash. A research identity page and a public archive of writing, podcast episodes, and books.
 
-This contains everything you need to run your app locally.
+Built with [Astro](https://astro.build). Static output, deployed on Netlify.
 
-View your app in AI Studio: https://ai.studio/apps/326bace0-f681-49d6-9a57-45486254b7b4
+## Develop
 
-## Run Locally
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # static build to dist/
+npm run check    # astro check
+```
 
-**Prerequisites:**  Node.js
+## Content
 
+Podcast episodes and essays live in `src/content/` as markdown with frontmatter, generated from RSS by:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run content:fetch
+```
+
+The script is idempotent. It only adds items it has not seen, and never overwrites hand-edited frontmatter such as `theme` or `featured`.
+
+Design system, architecture decisions, and copy rules are documented in `CLAUDE.md`.

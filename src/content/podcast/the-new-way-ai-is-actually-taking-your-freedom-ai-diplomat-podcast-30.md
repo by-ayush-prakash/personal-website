@@ -10,4 +10,4 @@ featured: false
 theme: "Governance & Society"
 ---
 
-<p>Free will is confusing, especially when AI comes into the mix. In this episode, Ayush Prakash talks about how artificial intelligence is taking away your free will in subtle but powerful ways.&nbsp;</p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow us on TikTok: @ai.diplomat</p><p>Follow us on Twitter: @aidiplomat</p><p>Follow us on @aidiplomat</p><p>For more information about Ayush: https://ayushprakash.com</p>
+<p>Free will is confusing, especially when AI comes into the mix. In this episode, Ayush Prakash talks about how artificial intelligence is taking away your free will in subtle but powerful ways. </p><p><br></p><p>Subscribe to Ayush on https://www.youtube.com/channel/UCDztjwrcu7zDAZkEBytKgKg</p><p>Follow us on TikTok: @ai.diplomat</p><p>Follow us on Twitter: @aidiplomat</p><p>Follow us on @aidiplomat</p><p>For more information about Ayush: https://ayushprakash.com</p>

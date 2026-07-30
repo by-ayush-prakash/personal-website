@@ -6,3 +6,8 @@ coverage/
 .DS_Store
 *.log
 .env*
+
+# local scratch
+_to_delete/
+.gitlocks-trash/
+_site-src.tgz

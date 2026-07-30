@@ -13,17 +13,23 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+// Some feed items ship a near-empty description. Never emit a thin meta tag.
+const raw = (entry.data.description ?? '').trim();
+const metaDescription =
+  raw.length >= 70
+    ? raw
+    : `${entry.data.title}. A conversation from the Ayush Prakash Podcast on AI, cognition, and human development.`;
 ---
 
 <BaseLayout
   title={`${entry.data.title} | Ayush Prakash`}
-  description={entry.data.description}
+  description={metaDescription}
   ogImage={themeImage(entry.data.theme, 'wide')}
 >
   <div class="hero" style="text-align:left;padding-bottom:0">
     <p class="kicker">{entry.data.theme ?? 'Podcast'}{entry.data.duration ? ` · ${entry.data.duration}` : ''}</p>
     <h1 class="dtitle" style="margin-top:20px;max-width:none">{entry.data.title}</h1>
-    <p class="lede" style="margin-left:0">{entry.data.description}</p>
   </div>
 
   <div style="padding:30px 0">

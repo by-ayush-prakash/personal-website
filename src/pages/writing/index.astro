@@ -44,7 +44,7 @@ const posts = (await getCollection('writing')).sort(
   </div>
 
   <div data-archive style="padding-top:clamp(50px,7vw,86px)">
-    <div class="sectionhead"><h2>Archive</h2><span class="meta">{posts.length} items</span></div>
+    <div class="sectionhead"><h2>Archive</h2><span class="meta" data-count>{posts.length} items</span></div>
     <div class="tools">
       <input type="text" placeholder="Search writing" />
       <button type="button" data-action="surprise">Surprise me</button>

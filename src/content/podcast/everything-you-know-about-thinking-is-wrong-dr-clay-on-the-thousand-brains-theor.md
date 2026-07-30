@@ -9,4 +9,4 @@ audioUrl: "https://anchor.fm/s/4f9f9cb0/podcast/play/95559601/https%3A%2F%2Fd3ct
 featured: false
 theme: "Minds & Consciousness"
 ---
-<p>This is episode 109.Dr. Viviane Clay is a researcher at Numenta. The Thousand Brains Project is a collaborative, open-source initiative that focuses on developing a new type of artificial intelligence based on a sensorimotor framework for intelligence, the Thousand Brains Theory.Connect with Dr. Clay: Website vivianeclay.comNumenta: http://numenta.comLinkedIn: https://www.linkedin.com/in/viviane-kakerbeck/
+<p>This is episode 109.Dr. Viviane Clay is a researcher at Numenta. The Thousand Brains Project is a collaborative, open-source initiative that focuses on developing a new type of artificial intelligence based on a sensorimotor framework for intelligence, the Thousand Brains Theory.Connect with Dr. Clay: Website vivianeclay.comNumenta: https://numenta.com https://www.linkedin.com/in/viviane-kakerbeck/
