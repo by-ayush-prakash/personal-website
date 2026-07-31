@@ -184,23 +184,23 @@ footer.site a:hover{color:var(--ink)}
 .statement .lede{margin:30px auto 0}
 .statement .pillrow{margin-top:clamp(34px,4vw,50px)}
 
-/* --- the statement is the hero --- */
-.hero-statement{
+/* --- the statement, section two --- */
+.statement-section{
   text-align:center;
-  padding:clamp(64px,10vw,150px) 0 clamp(56px,8vw,116px);
+  padding:clamp(58px,8vw,116px) 0 clamp(58px,8vw,116px);
 }
-.hero-statement h1{
+.statement-section h2{
   font-family:var(--serif);font-weight:300;
-  font-size:clamp(31px,5vw,64px);line-height:1.16;
-  max-width:17ch;margin:0 auto;text-wrap:balance;
+  font-size:clamp(26px,3.6vw,46px);line-height:1.2;
+  max-width:24ch;margin:0 auto;text-wrap:balance;
 }
-.hero-statement .lede{margin:clamp(28px,3.4vw,42px) auto 0;max-width:58ch}
-.hero-statement .pillrow{margin-top:clamp(34px,4vw,52px)}
+.statement-section .lede{margin:clamp(28px,3.4vw,42px) auto 0;max-width:58ch}
+.statement-section .pillrow{margin-top:clamp(34px,4vw,52px)}
 
 /* --- the book, image first and the caption beneath it --- */
 .book-feature{
   text-align:center;
-  padding:clamp(60px,9vw,124px) 0 clamp(62px,9vw,128px);
+  padding:clamp(48px,7vw,96px) 0 clamp(62px,9vw,128px);
 }
 .book-feature .cover{
   width:min(400px,74vw);aspect-ratio:2/3;overflow:hidden;margin:0 auto;
