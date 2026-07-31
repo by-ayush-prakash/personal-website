@@ -146,6 +146,14 @@ footer.site a:hover{color:var(--ink)}
   padding-block:clamp(60px,9vw,132px);
 }
 .band-inner{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
+.band-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.band-title .kicker{margin-bottom:20px}
+.band-title .dtitle{max-width:14ch;margin:0}
+@media(max-width:900px){
+  .band-split{grid-template-columns:1fr;gap:clamp(38px,6vw,60px)}
+  .band-title{order:-1}
+  .band-title .dtitle{max-width:18ch}
+}
 .band .kicker,.band .meta,.band .subq .n{color:rgba(255,255,255,.60)}
 .band .subq{border-top-color:rgba(255,255,255,.24)}
 .band .sectionhead{border-bottom-color:rgba(255,255,255,.55)}
