@@ -43,7 +43,12 @@ function initArchive(root: HTMLElement) {
       if (show) visible += 1;
     }
 
-    if (countEl) countEl.textContent = `${visible} ${visible === 1 ? 'item' : 'items'}`;
+    // Only report a number while the user is actively narrowing. An idle total
+    // ("168 items") reads as a claim; a filtered count reads as feedback.
+    const narrowing = query !== '' || activeTheme !== 'all';
+    if (countEl) {
+      countEl.textContent = narrowing ? `${visible} ${visible === 1 ? 'item' : 'items'}` : '';
+    }
   }
 
   for (const button of filterButtons) {

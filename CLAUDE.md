@@ -33,7 +33,7 @@ The register is editorial magazine typography, modelled on Kinfolk. Serif for di
 ### Tokens
 
 ```
---paper:  #FDFCF9   warm off-white, never pure #fff
+--paper:  #FFFFFF   pure white
 --ink:    #1A1A18   near-black, never pure #000
 --muted:  #78766F   metadata, ledes, secondary text
 --hair:   rgba(26,26,24,.20)   hairline dividers
@@ -45,7 +45,7 @@ Five values. No accent colour, no gradients, no drop shadows beyond the 1px seat
 ### Type
 
 ```
---serif: 'Canela Text','Domaine Display','Instrument Serif','Newsreader',Georgia,serif
+--serif: 'Spectral',Georgia,'Times New Roman',serif   (set Light, 300, at every display size)
 --sans:  'Neue Montreal','PP Neue Montreal','Inter',-apple-system,sans-serif
 ```
 
