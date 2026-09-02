@@ -1,10 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const voices = [
+  ['AI and machine-learning researchers', 'Capabilities, limits and unresolved technical questions.'],
+  ['Researchers of mind and behaviour', 'Cognition, neuroscience, psychology, intelligence and human judgment.'],
+  ['Educators and learning researchers', 'Learning, skill, verification and work with automated assistance.'],
+  ['Philosophers, ethicists and critics', 'The assumptions and human values beneath AI development.'],
+  ['Policymakers and legal scholars', 'Accountability, regulation, rights, institutions and power.'],
+  ['Builders, founders and operators', 'What happens when AI enters products, workplaces and essential systems.'],
+];
+
+const outcomes = [
+  ['Agreement', 'Where conversations from different fields repeatedly arrive at the same position.'],
+  ['Disagreement', 'Where researchers, policymakers, builders and critics divide, and why.'],
+  ['Uncertainty', 'Where the archive cannot support a firm conclusion or evidence is missing.'],
+  ['Change', 'How the record and CIF’s analysis develop as new conversations are added.'],
+];
+
+const evidencePath = [
+  ['Conversation', 'A published long-form interview enters the source record.'],
+  ['Passage', 'Relevant statements retain their transcript, timestamp and surrounding exchange.'],
+  ['Comparison', 'CIF compares positions, disagreements and evidence across the archive.'],
+  ['Conclusion', 'CIF publishes its analysis with a visible path back to every source.'],
+];
 ---
 
 <BaseLayout
   title="Research | Ayush Prakash"
-  description="How do sustained interactions with conversational AI systems affect cognition, identity formation, agency, relationships, epistemic development, and beliefs about minds, especially among young people?"
+  description="The First AI-Native Generation is CIF’s living, source-linked analysis of its public podcast archive."
   ogImage="/img/book-genz.jpg"
 >
   <div class="band">
@@ -13,39 +36,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="kicker">A research project at the Center for Innovating the Future</p>
         <h1 class="dtitle">The First AI-Native Generation</h1>
         <div class="pillrow" style="justify-content:flex-start">
-          <a class="pill" href="/podcast">Listen to the research</a>
-          <a class="pill pill--ghost" href="/writing">Read the writing</a>
+          <a class="pill" href="https://innovatingfuture.com/work/ai-native-generation/">View the CIF project</a>
         </div>
       </div>
       <div class="band-q">
-        <p class="kicker" style="margin-bottom:20px">Core Question</p>
-        <p class="bigq">How do sustained interactions with conversational AI systems affect cognition, identity formation, agency, relationships, epistemic development, and beliefs about minds, especially among young people?</p>
+        <p class="kicker" style="margin-bottom:20px">Project goal</p>
+        <p class="bigq">Turn CIF’s public conversation archive into an understandable, inspectable analysis of AI and human life.</p>
+        <p class="statusline">Research in development. Evidence and findings have not been published.</p>
       </div>
     </div>
   </div>
-  <div style="padding-top:34px">
-    <p class="kicker" style="margin-bottom:20px">Subsidiary Questions</p>
-    <div class="subq"><div class="n">1</div><div><div class="t">Off-loading</div><div class="b">Which cognitive capacities do young people stop developing when AI systems perform the thinking, remembering, and deciding for them?</div></div></div>
-    <div class="subq"><div class="n">2</div><div><div class="t">Attribution</div><div class="b">How do conversational interfaces shape what young people believe about minds, consciousness, and who deserves moral consideration?</div></div></div>
-    <div class="subq"><div class="n">3</div><div><div class="t">Epistemic Authority</div><div class="b">When AI becomes the default answer engine, how does the first AI-native generation decide what is true?</div></div></div>
-  </div>
-  <div style="padding-top:clamp(50px,7vw,90px)">
-    <p class="kicker" style="margin-bottom:20px">The Interview Series</p>
-    <div class="prose" style="max-width:70ch">
-      <p>Co-Existing with AI is the interview program behind this report. Long-form recorded conversations with AI researchers, founders, policymakers, and skeptics, transcribed, coded, and analysed as an elite-informant qualitative study.</p>
+
+  <section class="research-section intro-grid">
+    <div>
+      <p class="kicker">The work</p>
+      <h2 class="research-title">Making the archive understandable as a whole.</h2>
     </div>
-  </div>
-  <div style="padding-top:clamp(50px,7vw,90px)">
-    <p class="kicker" style="margin-bottom:20px">Outputs</p>
-    <table class="outputs">
-      <tr><td>Flagship report, 30&ndash;50 pp.</td></tr>
-      <tr><td>Policy brief, 6&ndash;10 pp.</td></tr>
-      <tr><td>Developmentally Responsible AI Framework</td></tr>
-      <tr><td>Interview series, 30 conversations</td></tr>
-    </table>
-  </div>
-  <div style="padding-top:clamp(50px,7vw,90px);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(30px,5vw,66px)">
-    <div><p class="kicker" style="margin-bottom:15px">Methods</p><div class="prose"><p>Transparent literature review and long-form expert interviews, transcribed with speaker attribution and coded against a fixed frame. The interview corpus is analysed following Kulkov et al., <em>Leveraging Podcasts as Academic Resources</em>, International Journal of Qualitative Methods, 2024.</p><p>Two limitations apply and are stated in every output. Participants were invited rather than sampled. Interviews were conversational rather than protocol-driven. Findings, hypotheses, and open questions are labeled as such.</p></div></div>
-    <div><p class="kicker" style="margin-bottom:15px">Corrections Log</p><div class="prose"><p>No corrections to date. Errors in published work are logged here with dates.</p></div></div>
-  </div>
+    <div class="prose">
+      <p>Any episode can explain one person’s position. Understanding the field currently requires someone to watch the entire archive, compare different assumptions and reach conclusions across conversations that may never directly answer one another.</p>
+      <p>CIF will do that comparative work. The project analyzes the published conversations, identifies recurring positions, disagreements and unresolved questions, and develops CIF’s own conclusions from the record.</p>
+      <p>I conduct the long-form conversations and lead the synthesis through CIF. The Ayush Prakash Podcast supplies the public source archive.</p>
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="sectionhead"><h2>How the evidence works</h2><span class="r">Source to conclusion</span></div>
+    <div class="outcome-grid evidence-path">
+      {evidencePath.map((item, i) => (
+        <article>
+          <span class="kicker">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{item[0]}</h3>
+          <p>{item[1]}</p>
+        </article>
+      ))}
+    </div>
+    <div class="intro-grid context-block">
+      <h2 class="research-title">Context remains attached.</h2>
+      <div class="prose">
+        <p>Each published conclusion will link to the relevant transcript passage, exact video timestamp and surrounding exchange. Readers can inspect what was said before assessing CIF’s interpretation.</p>
+        <p>Those links make the context and reasoning auditable. They do not prevent disagreement with CIF’s analysis, and the report will distinguish a source’s words from CIF’s conclusions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="sectionhead"><h2>Who informs the project</h2><span class="r">Six perspectives</span></div>
+    <div class="voice-list">
+      {voices.map((voice, i) => (
+        <div class="voice">
+          <span class="voice-number">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{voice[0]}</h3>
+          <p>{voice[1]}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="sectionhead"><h2>The public result</h2><span class="r">Interactive and living</span></div>
+    <p class="bigq outcome-intro">A public interface for understanding the status quo, following the evidence and seeing where expert judgment divides.</p>
+    <div class="outcome-grid">
+      {outcomes.map((outcome, i) => (
+        <article>
+          <span class="kicker">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{outcome[0]}</h3>
+          <p>{outcome[1]}</p>
+        </article>
+      ))}
+    </div>
+    <div class="depth">
+      <p class="kicker">Two depths of reading</p>
+      <p class="bigq">The First AI-Native Generation report should be accessible to the first AI-native generations.</p>
+      <div class="prose">
+        <p>Readers will be able to choose a question, understand CIF’s conclusion, see where the archive agrees or divides, and open the source, context, competing interpretation and revision history behind it.</p>
+        <p>Researchers, policymakers, journalists and executives will be able to inspect the full evidentiary record.</p>
+        <p>The current analysis will update as conversations are added, corrected or withdrawn. Dated editions will preserve what the evidence supported at a specific moment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-section status-box">
+    <div>
+      <p class="kicker">Current status</p>
+      <h2 class="research-title">The evidence is not ready for publication.</h2>
+    </div>
+    <div class="prose">
+      <p>CIF is still completing the corpus, source review, methodology and publication format. Working interview counts, names, provisional claims and internal analysis are not public findings.</p>
+      <p>The CIF project page will carry the authoritative status and, when ready, the public evidence.</p>
+      <a class="text-link" href="https://innovatingfuture.com/work/ai-native-generation/">View the project at CIF</a>
+    </div>
+  </section>
+
+  <style>
+    .statusline{font-size:13px;line-height:1.6;color:rgba(255,255,255,.62);margin-top:28px;max-width:42ch}
+    .research-section{padding:clamp(58px,8vw,112px) 0;border-bottom:1px solid var(--hair)}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,7vw,110px);align-items:start}
+    .research-title{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,48px);line-height:1.16;max-width:18ch;margin-top:18px;text-wrap:balance}
+    .voice-list{border-top:1px solid var(--hair);margin-top:clamp(28px,4vw,52px)}
+    .voice{display:grid;grid-template-columns:64px minmax(260px,.8fr) 1fr;gap:clamp(20px,4vw,58px);align-items:start;padding:28px 0;border-bottom:1px solid var(--hair)}
+    .voice-number{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--muted)}
+    .voice h3,.outcome-grid h3{font-family:var(--serif);font-weight:300;text-transform:uppercase;font-size:clamp(16px,1.7vw,21px);line-height:1.25}
+    .voice p,.outcome-grid p{color:var(--muted);max-width:48ch}
+    .outcome-intro{margin:clamp(38px,6vw,74px) 0;max-width:28ch}
+    .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+    .outcome-grid article{padding:28px 24px 34px;border-right:1px solid var(--hair);min-height:230px}.outcome-grid article:first-child{padding-left:0}.outcome-grid article:last-child{border-right:0;padding-right:0}
+    .outcome-grid h3{margin:54px 0 12px}.outcome-grid p{font-size:13px;line-height:1.7}
+    .depth{display:grid;grid-template-columns:.45fr 1fr .8fr;gap:clamp(28px,5vw,72px);align-items:start;margin-top:clamp(58px,8vw,110px)}
+    .depth .bigq{font-size:clamp(22px,2.5vw,32px)}
+    .evidence-path{margin-top:clamp(28px,4vw,52px)}.context-block{margin-top:clamp(52px,7vw,90px)}
+    .status-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,7vw,110px);background:rgba(26,26,24,.035)}
+    .text-link{display:inline-block;margin-top:24px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
+    @media(max-width:900px){.intro-grid,.status-box,.depth{grid-template-columns:1fr}.outcome-grid{grid-template-columns:repeat(2,1fr)}.outcome-grid article:nth-child(2){border-right:0}.voice{grid-template-columns:48px 1fr}.voice p{grid-column:2}}
+    @media(max-width:620px){.voice{grid-template-columns:36px 1fr;gap:16px}.outcome-grid{grid-template-columns:1fr}.outcome-grid article,.outcome-grid article:first-child,.outcome-grid article:last-child{padding:24px 0;border-right:0;border-bottom:1px solid var(--hair);min-height:0}.outcome-grid h3{margin:24px 0 8px}:global(footer.site>div:first-child){display:flex;flex-wrap:wrap;gap:8px 16px}:global(footer.site>div:first-child a){margin-right:0}}
+  </style>
 </BaseLayout>
