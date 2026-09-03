@@ -8,7 +8,7 @@
 // entirely — no re-write, no field merge — so hand-edited frontmatter
 // (theme, featured) can never be clobbered by a re-run.
 
-import { writeFile, mkdir, access } from 'node:fs/promises';
+import { writeFile, mkdir, access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { XMLParser } from 'fast-xml-parser';
@@ -87,6 +87,20 @@ async function fileExists(p) {
   }
 }
 
+async function existingPodcastAudioUrls() {
+  const directory = path.join(CONTENT_DIR, 'podcast');
+  const files = await readdir(directory);
+  const urls = new Set();
+
+  for (const file of files.filter((name) => name.endsWith('.md'))) {
+    const content = await readFile(path.join(directory, file), 'utf8');
+    const match = content.match(/^audioUrl:\s*"([^"]+)"/m);
+    if (match) urls.add(match[1]);
+  }
+
+  return urls;
+}
+
 function yamlValue(value) {
   if (typeof value === 'string') return JSON.stringify(value);
   return String(value);
@@ -105,6 +119,7 @@ function frontmatter(fields) {
 async function run() {
   await mkdir(path.join(CONTENT_DIR, 'podcast'), { recursive: true });
   await mkdir(path.join(CONTENT_DIR, 'writing'), { recursive: true });
+  const podcastAudioUrls = await existingPodcastAudioUrls();
 
   const added = { podcast: 0, writing: 0 };
   const skipped = { podcast: 0, writing: 0 };
@@ -129,6 +144,16 @@ async function run() {
       const enclosure = getEnclosure(item);
       const isEpisode = Boolean(enclosure);
       const collection = isEpisode ? 'podcast' : 'writing';
+      const audioUrl = enclosure?.['@_url'];
+
+      // Episode titles can be revised after publication. The enclosure URL is
+      // stable, so use it as the episode identity and avoid creating a second
+      // page when only the title changes.
+      if (isEpisode && audioUrl && podcastAudioUrls.has(audioUrl)) {
+        skipped.podcast++;
+        continue;
+      }
+
       const slug = slugify(title);
       const filePath = path.join(CONTENT_DIR, collection, `${slug}.md`);
 
@@ -172,12 +197,13 @@ async function run() {
         description: toDescription(derivedDescriptionSource),
         sourceUrl: link,
         ...(isEpisode
-          ? { duration: normalizeDuration(item['itunes:duration']), audioUrl: enclosure['@_url'] }
+          ? { duration: normalizeDuration(item['itunes:duration']), audioUrl }
           : { truncated }),
         featured: false,
       };
 
       await writeFile(filePath, frontmatter(fields) + body.trim() + '\n', 'utf8');
+      if (isEpisode && audioUrl) podcastAudioUrls.add(audioUrl);
       added[collection]++;
     }
   }

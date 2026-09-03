@@ -10,7 +10,7 @@ const navItems = [
 
 // Normalise trailing slashes, and treat /podcast/<slug> as "Podcast" being active.
 const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
-const isActive = (href) =>
+const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
 ---
 

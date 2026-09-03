@@ -49,7 +49,6 @@ const evidencePath = [
 
   <section class="research-section intro-grid">
     <div>
-      <p class="kicker">The work</p>
       <h2 class="research-title">Making the archive understandable as a whole.</h2>
     </div>
     <div class="prose">
@@ -80,7 +79,7 @@ const evidencePath = [
   </section>
 
   <section class="research-section">
-    <div class="sectionhead"><h2>Who informs the project</h2><span class="r">Six perspectives</span></div>
+    <div class="sectionhead"><h2>Who informs the project</h2></div>
     <div class="voice-list">
       {voices.map((voice, i) => (
         <div class="voice">
@@ -105,12 +104,11 @@ const evidencePath = [
       ))}
     </div>
     <div class="depth">
-      <p class="kicker">Two depths of reading</p>
       <p class="bigq">The First AI-Native Generation report should be accessible to the first AI-native generations.</p>
-      <div class="prose">
-        <p>Readers will be able to choose a question, understand CIF’s conclusion, see where the archive agrees or divides, and open the source, context, competing interpretation and revision history behind it.</p>
-        <p>Researchers, policymakers, journalists and executives will be able to inspect the full evidentiary record.</p>
-        <p>The current analysis will update as conversations are added, corrected or withdrawn. Dated editions will preserve what the evidence supported at a specific moment.</p>
+      <div class="depth-list">
+        <div><span class="kicker">Understand</span><p>Choose a question, understand CIF’s conclusion and see where the archive agrees or divides.</p></div>
+        <div><span class="kicker">Inspect</span><p>Open the source, context, competing interpretation and revision history behind every conclusion.</p></div>
+        <div><span class="kicker">Follow</span><p>See how the analysis changes as conversations are added, corrected or withdrawn. Dated editions preserve the record at a specific moment.</p></div>
       </div>
     </div>
   </section>
@@ -141,12 +139,16 @@ const evidencePath = [
     .outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
     .outcome-grid article{padding:28px 24px 34px;border-right:1px solid var(--hair);min-height:230px}.outcome-grid article:first-child{padding-left:0}.outcome-grid article:last-child{border-right:0;padding-right:0}
     .outcome-grid h3{margin:54px 0 12px}.outcome-grid p{font-size:13px;line-height:1.7}
-    .depth{display:grid;grid-template-columns:.45fr 1fr .8fr;gap:clamp(28px,5vw,72px);align-items:start;margin-top:clamp(58px,8vw,110px)}
-    .depth .bigq{font-size:clamp(22px,2.5vw,32px)}
+    .depth{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(42px,8vw,128px);align-items:start;margin-top:clamp(58px,8vw,110px);padding-top:clamp(34px,5vw,62px);border-top:1px solid var(--rule)}
+    .depth .bigq{font-size:clamp(27px,3.2vw,43px);line-height:1.22;max-width:18ch}
+    .depth-list{border-top:1px solid var(--hair)}
+    .depth-list>div{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--hair);align-items:start}
+    .depth-list p{font-size:15px;line-height:1.7;max-width:48ch}
     .evidence-path{margin-top:clamp(28px,4vw,52px)}.context-block{margin-top:clamp(52px,7vw,90px)}
-    .status-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,7vw,110px);background:rgba(26,26,24,.035)}
+    .status-box{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,7vw,110px);border-bottom:0}
+    .status-box::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background:rgba(26,26,24,.035);border-block:1px solid var(--hair)}
     .text-link{display:inline-block;margin-top:24px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}
     @media(max-width:900px){.intro-grid,.status-box,.depth{grid-template-columns:1fr}.outcome-grid{grid-template-columns:repeat(2,1fr)}.outcome-grid article:nth-child(2){border-right:0}.voice{grid-template-columns:48px 1fr}.voice p{grid-column:2}}
-    @media(max-width:620px){.voice{grid-template-columns:36px 1fr;gap:16px}.outcome-grid{grid-template-columns:1fr}.outcome-grid article,.outcome-grid article:first-child,.outcome-grid article:last-child{padding:24px 0;border-right:0;border-bottom:1px solid var(--hair);min-height:0}.outcome-grid h3{margin:24px 0 8px}:global(footer.site>div:first-child){display:flex;flex-wrap:wrap;gap:8px 16px}:global(footer.site>div:first-child a){margin-right:0}}
+    @media(max-width:620px){.voice{grid-template-columns:36px 1fr;gap:16px}.outcome-grid{grid-template-columns:1fr}.outcome-grid article,.outcome-grid article:first-child,.outcome-grid article:last-child{padding:24px 0;border-right:0;border-bottom:1px solid var(--hair);min-height:0}.outcome-grid h3{margin:24px 0 8px}.depth-list>div{grid-template-columns:1fr;gap:8px}:global(footer.site>div:first-child){display:flex;flex-wrap:wrap;gap:8px 16px}:global(footer.site>div:first-child a){margin-right:0}}
   </style>
 </BaseLayout>

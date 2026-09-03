@@ -8,7 +8,6 @@ const episodes = (await getCollection('podcast')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 const featured = episodes.filter((ep) => ep.data.featured);
-const tagged = episodes.filter((ep) => ep.data.theme);
 ---
 
 <BaseLayout
@@ -43,10 +42,9 @@ const tagged = episodes.filter((ep) => ep.data.theme);
       <button class="on" data-theme="all">All</button>
       {THEMES.map((theme) => <button data-theme={theme}>{theme}</button>)}
     </div>
-    <p class="meta" style="padding-top:14px;max-width:62ch">Episodes tagged to the five research themes are shown by default. The full archive back to 2021 is one click away, and search always covers all of it.</p>
+    <p class="meta" style="padding-top:14px;max-width:62ch">Browse the complete archive, or filter it by one of the five research themes.</p>
     <div class="tools">
       <input type="text" placeholder="Search episodes" />
-      <button type="button" data-action="show-all">Show the full archive</button>
       <button type="button" data-action="surprise">Surprise me</button>
     </div>
     {episodes.map((ep) => (
