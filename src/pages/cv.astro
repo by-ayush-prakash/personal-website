@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 
 const episodes = await getCollection('podcast');
 const essays = await getCollection('writing');
-const featured = episodes.filter(e => e.data.featured);
 const firstEpisode = episodes.map(e => new Date(e.data.date)).sort((a,b)=>a.getTime()-b.getTime())[0];
 const startYear = firstEpisode ? firstEpisode.getFullYear() : 2021;
 ---
@@ -19,13 +18,6 @@ const startYear = firstEpisode ? firstEpisode.getFullYear() : 2021;
   </div>
   <hr class="rule" />
 
-  <div style="padding-top:34px">
-    <div class="sectionhead"><h2>Research</h2></div>
-    <div class="subq"><div class="n">&middot;</div><div>
-      <div class="t">The First AI-Native Generation</div>
-      <div class="b">A living, source-linked analysis of the public podcast archive, mapping agreements, disagreements, and unresolved questions across conversations about AI.</div>
-    </div></div>
-  </div>
 
   <div style="padding-top:clamp(40px,6vw,72px)">
     <div class="sectionhead"><h2>Books</h2></div>
@@ -53,7 +45,6 @@ const startYear = firstEpisode ? firstEpisode.getFullYear() : 2021;
 
   <div style="padding-top:clamp(40px,6vw,72px)">
     <div class="sectionhead"><h2>Selected Talks</h2></div>
-    <div class="talk"><h3>The First AI-Native Generation</h3><p>How a public archive can map what the field agrees on, disputes, and has not resolved.</p></div>
     <div class="talk"><h3>Developmentally Responsible AI</h3><p>A framework for building systems that young people grow up inside.</p></div>
     <div class="talk"><h3>Digital Minds, Human Attribution, and Public Trust</h3><p>Why people believe machines have minds, and what follows for policy.</p></div>
   </div>
@@ -78,7 +69,7 @@ const startYear = firstEpisode ? firstEpisode.getFullYear() : 2021;
     <div class="sectionhead"><h2>Public Scholarship</h2></div>
     <div class="subq"><div class="n">&middot;</div><div>
       <div class="t">The Ayush Prakash Podcast</div>
-      <div class="b">150+ published conversations with researchers, scientists, and philosophers since {startYear}, including Karl Friston and Avi Loeb. {featured.length} episodes are designated as source material for the current research program. {essays.length} published essays.</div>
+      <div class="b">150+ published conversations with researchers, scientists, and philosophers since {startYear}, including Karl Friston and Avi Loeb. {essays.length} published essays.</div>
     </div></div>
   </div>
 

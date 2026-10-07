@@ -9,7 +9,7 @@
 // - .tools button[data-action="surprise"] jumps to a random visible row
 // - [data-count] receives the visible row count
 // - each row is an <a class="row" data-theme="..." data-search="..."> and may
-//   carry data-untagged when it has no research theme.
+//   have an empty theme when it has no research theme.
 
 function initArchive(root: HTMLElement) {
   const filterButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('.filters button'));
@@ -35,6 +35,8 @@ function initArchive(root: HTMLElement) {
       if (show) visible += 1;
     }
 
+    if (surpriseButton) surpriseButton.disabled = visible === 0;
+
     // Only report a number while the user is actively narrowing. An idle total
     // ("168 items") reads as a claim; a filtered count reads as feedback.
     const narrowing = query !== '' || activeTheme !== 'all';
@@ -45,8 +47,12 @@ function initArchive(root: HTMLElement) {
 
   for (const button of filterButtons) {
     button.addEventListener('click', () => {
-      for (const b of filterButtons) b.classList.remove('on');
+      for (const b of filterButtons) {
+        b.classList.remove('on');
+        b.setAttribute('aria-pressed', 'false');
+      }
       button.classList.add('on');
+      button.setAttribute('aria-pressed', 'true');
       activeTheme = button.dataset.theme ?? 'all';
       applyFilters();
     });

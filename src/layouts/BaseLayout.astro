@@ -7,10 +7,9 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
-  ogImage?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -28,7 +27,7 @@ const { title, description, ogImage } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <SEOHead title={title} description={description} ogImage={ogImage} />
+    <SEOHead title={title} description={description} />
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
@@ -48,10 +47,11 @@ const { title, description, ogImage } = Astro.props;
     })} />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="wrap">
       <Header />
       <hr class="rule" />
-      <slot />
+      <main id="main-content"><slot /></main>
       <Footer />
     </div>
   </body>

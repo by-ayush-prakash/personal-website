@@ -1,7 +1,6 @@
 ---
 const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/research', label: 'Research' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/writing', label: 'Writing' },
   { href: '/books', label: 'Books' },
@@ -17,9 +16,9 @@ const isActive = (href: string) =>
 <header class="site">
   <div class="mastrow">
     <a href="/" class="wordmark">Ayush Prakash</a>
-    <nav class="main">
+    <nav class="main" aria-label="Main navigation">
       {navItems.map((item) => (
-        <a href={item.href} class={isActive(item.href) ? 'on' : undefined}>{item.label}</a>
+        <a href={item.href} class={isActive(item.href) ? 'on' : undefined} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
   </div>

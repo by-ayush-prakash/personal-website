@@ -1,6 +1,5 @@
 ---
 const bigNav = [
-  { href: '/research', label: 'Research' },
   { href: '/podcast', label: 'Podcast' },
   { href: '/writing', label: 'Writing' },
 ];
@@ -16,7 +15,7 @@ const small = [
 
 <hr class="hair" />
 
-<nav class="footnav">
+<nav class="footnav" aria-label="Footer navigation">
   {bigNav.map((item) => <a href={item.href}>{item.label}</a>)}
   <div class="pillrow">
     <a class="pill" href="mailto:ayush@innovatingfuture.com">Get in touch</a>
@@ -26,8 +25,8 @@ const small = [
 
 <div class="news">
   <div class="h">Never miss the research. Sign up for occasional notes from Ayush Prakash.</div>
-  <form class="f">
-    <input type="email" name="email" placeholder="Email Address" required />
+  <form class="f" action="https://ayushprakash.substack.com/subscribe" method="get">
+    <input type="email" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="email" required />
     <button type="submit">Submit</button>
   </form>
 </div>

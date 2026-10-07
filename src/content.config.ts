@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 // CLAUDE.md's architecture section, verbatim. Human–AI Relationships uses an
@@ -16,7 +17,7 @@ const baseSchema = {
   slug: z.string(),
   date: z.coerce.date(),
   description: z.string(),
-  sourceUrl: z.string().url(),
+  sourceUrl: z.url(),
   theme: z.enum(THEMES).optional(),
   featured: z.boolean().default(false),
 };
@@ -26,7 +27,7 @@ const podcast = defineCollection({
   schema: z.object({
     ...baseSchema,
     duration: z.string().optional(),
-    audioUrl: z.string().url(),
+    audioUrl: z.url(),
   }),
 });
 

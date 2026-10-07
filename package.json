@@ -9,15 +9,18 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "content:fetch": "node scripts/fetch-feeds.mjs"
+    "content:fetch": "node scripts/fetch-feeds.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "verify": "npm run test && npm run check && npm run build && node scripts/check-site.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.1.6"
+    "astro": "^7.3.6"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.10",
     "fast-xml-parser": "^5.10.1",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.2",
+    "sharp": "^0.35.3"
   }
 }

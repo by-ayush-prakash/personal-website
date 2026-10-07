@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { themeImage } from '../../lib/themeImage';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -25,7 +24,6 @@ const metaDescription =
 <BaseLayout
   title={`${entry.data.title} | Ayush Prakash`}
   description={metaDescription}
-  ogImage={themeImage(entry.data.theme, 'wide')}
 >
   <div class="hero" style="text-align:left;padding-bottom:0">
     <p class="kicker">{entry.data.theme ?? 'Podcast'}{entry.data.duration ? ` · ${entry.data.duration}` : ''}</p>
@@ -33,7 +31,7 @@ const metaDescription =
   </div>
 
   <div style="padding:30px 0">
-    <audio controls style="width:100%" src={entry.data.audioUrl}>
+    <audio controls preload="none" aria-label={`Listen to ${entry.data.title}`} style="width:100%" src={entry.data.audioUrl}>
       Your browser does not support the audio element. <a href={entry.data.audioUrl}>Download the episode</a>.
     </audio>
   </div>

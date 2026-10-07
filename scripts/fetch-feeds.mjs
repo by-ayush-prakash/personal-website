@@ -12,6 +12,7 @@ import { writeFile, mkdir, access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { XMLParser } from 'fast-xml-parser';
+import { sourceKey, audioKey, collisionSlug } from './lib/feedIdentity.mjs';
 import { stripHtmlBlock as stripHtml, toDescription, stripPromoBoilerplate } from './lib/feedContent.mjs';
 
 const FEEDS = [
@@ -67,14 +68,20 @@ function getEnclosure(item) {
   return list.find((e) => String(e?.['@_type'] || '').toLowerCase().startsWith('audio/')) || null;
 }
 
-async function fetchFeed(url) {
-  const res = await fetch(url);
+export async function fetchFeed(url, fetchImpl = fetch) {
+  const res = await fetchImpl(url, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0',
+      Accept: 'application/rss+xml, application/xml, text/xml',
+    },
+    signal: AbortSignal.timeout(30_000),
+  });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const xml = await res.text();
   const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_' });
   const data = parser.parse(xml);
   const items = data?.rss?.channel?.item;
-  if (!items) return [];
+  if (!items) throw new Error('Feed returned no RSS items');
   return Array.isArray(items) ? items : [items];
 }
 
@@ -87,18 +94,21 @@ async function fileExists(p) {
   }
 }
 
-async function existingPodcastAudioUrls() {
-  const directory = path.join(CONTENT_DIR, 'podcast');
+async function existingIdentities(collection) {
+  const directory = path.join(CONTENT_DIR, collection);
   const files = await readdir(directory);
   const urls = new Set();
+  const sources = new Set();
 
   for (const file of files.filter((name) => name.endsWith('.md'))) {
     const content = await readFile(path.join(directory, file), 'utf8');
     const match = content.match(/^audioUrl:\s*"([^"]+)"/m);
-    if (match) urls.add(match[1]);
+    if (match) urls.add(audioKey(match[1]));
+    const source = content.match(/^sourceUrl:\s*"([^"]+)"/m);
+    if (source) sources.add(sourceKey(source[1]));
   }
 
-  return urls;
+  return { urls, sources };
 }
 
 function yamlValue(value) {
@@ -119,7 +129,8 @@ function frontmatter(fields) {
 async function run() {
   await mkdir(path.join(CONTENT_DIR, 'podcast'), { recursive: true });
   await mkdir(path.join(CONTENT_DIR, 'writing'), { recursive: true });
-  const podcastAudioUrls = await existingPodcastAudioUrls();
+  const podcast = await existingIdentities('podcast');
+  const writing = await existingIdentities('writing');
 
   const added = { podcast: 0, writing: 0 };
   const skipped = { podcast: 0, writing: 0 };
@@ -149,13 +160,18 @@ async function run() {
       // Episode titles can be revised after publication. The enclosure URL is
       // stable, so use it as the episode identity and avoid creating a second
       // page when only the title changes.
-      if (isEpisode && audioUrl && podcastAudioUrls.has(audioUrl)) {
-        skipped.podcast++;
+      const identities = isEpisode ? podcast : writing;
+      if (identities.sources.has(sourceKey(link)) || (isEpisode && audioUrl && identities.urls.has(audioKey(audioUrl)))) {
+        skipped[collection]++;
         continue;
       }
 
-      const slug = slugify(title);
-      const filePath = path.join(CONTENT_DIR, collection, `${slug}.md`);
+      let slug = slugify(title);
+      let filePath = path.join(CONTENT_DIR, collection, `${slug}.md`);
+      if (await fileExists(filePath)) {
+        slug = collisionSlug(slug, sourceKey(link));
+        filePath = path.join(CONTENT_DIR, collection, `${slug}.md`);
+      }
 
       if (await fileExists(filePath)) {
         skipped[collection]++;
@@ -203,7 +219,8 @@ async function run() {
       };
 
       await writeFile(filePath, frontmatter(fields) + body.trim() + '\n', 'utf8');
-      if (isEpisode && audioUrl) podcastAudioUrls.add(audioUrl);
+      identities.sources.add(sourceKey(link));
+      if (isEpisode && audioUrl) identities.urls.add(audioKey(audioUrl));
       added[collection]++;
     }
   }
@@ -212,8 +229,11 @@ async function run() {
   console.log(`Writing: ${added.writing} added, ${skipped.writing} already present`);
   console.log(`Truncated (paywall-length) writing items this run: ${truncatedCount}`);
   if (failedFeeds.length) {
-    console.log(`Feeds unreachable this run (skipped, existing content untouched): ${failedFeeds.join(', ')}`);
+    console.error(`Feeds unreachable this run (skipped, existing content untouched): ${failedFeeds.join(', ')}`);
+    if (process.argv.includes('--strict')) process.exitCode = 1;
   }
 }
 
-run();
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  run().catch((error) => { console.error(error); process.exitCode = 1; });
+}

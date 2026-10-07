@@ -10,7 +10,6 @@ const posts = (await getCollection('writing')).sort(
 <BaseLayout
   title="Writing | Ayush Prakash"
   description="Published work, ordered by contribution rather than date."
-  ogImage="/img/row-4.jpg"
 >
   <div class="hero"><h1 class="dsub">Writing</h1></div>
   <hr class="rule" />
@@ -34,16 +33,16 @@ const posts = (await getCollection('writing')).sort(
     <a class="row noimg" href="/books">
       <div>
         <div class="rt">AI for Gen Z</div>
-        <div class="rd">The starting point of this research program.</div>
+        <div class="rd">What digital technology is doing to the generation coming of age inside it.</div>
       </div>
       <div class="rm">Book &middot; 2024</div>
     </a>
   </div>
 
   <div data-archive style="padding-top:clamp(50px,7vw,86px)">
-    <div class="sectionhead"><h2>Archive</h2><span class="meta" data-count></span></div>
+    <div class="sectionhead"><h2>Essays & stories</h2><span class="meta" role="status" aria-live="polite" data-count></span></div>
     <div class="tools">
-      <input type="text" placeholder="Search writing" />
+      <input placeholder="Search writing" type="search" aria-label="Search writing" />
       <button type="button" data-action="surprise">Surprise me</button>
     </div>
     {posts.map((post) => (

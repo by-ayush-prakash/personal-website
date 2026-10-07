@@ -2,15 +2,20 @@ name: Sync feeds
 
 on:
   schedule:
-    - cron: '17 11 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: sync-feeds
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,10 +23,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run content:fetch
+      - name: Fetch feeds
+        id: feeds
+        continue-on-error: true
+        run: npm run content:fetch -- --strict
+      - run: npm run check && npm run build
       - name: Commit new feed items
         run: |
-          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard src/content)" ]; then
+          if git diff --quiet -- src/content && [ -z "$(git ls-files --others --exclude-standard src/content)" ]; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -29,3 +38,6 @@ jobs:
           git add src/content
           git commit -m "Sync RSS content"
           git push
+      - name: Report feed failure
+        if: steps.feeds.outcome == 'failure'
+        run: exit 1
