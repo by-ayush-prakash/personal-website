@@ -7,11 +7,9 @@ const SLUGS: Record<string, string> = {
   'Youth & Education': 'youth',
 };
 
-export type ImgShape = 'card' | 'sq' | 'wide';
-
-export function themeImage(theme: string | undefined, shape: ImgShape = 'card'): string {
+export function themeImage(theme: string | undefined): string {
   const slug = (theme && SLUGS[theme]) || 'general';
-  return `/img/theme-${slug}-${shape}.jpg`;
+  return `/img/theme-${slug}-card.jpg`;
 }
 
 const ALT: Record<string, string> = {

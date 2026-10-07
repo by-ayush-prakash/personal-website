@@ -32,4 +32,4 @@ Sharing cards are prerendered PNG routes under `/share/`, using the existing AP 
 
 The scheduled feed sync runs hourly, preserves existing content, identifies revised episodes by source/audio identity, and reports inaccessible feeds as failed runs after committing any successful imports. A new publication still depends on feed availability, GitHub scheduling and Netlify deployment. Run `npm run content:fetch -- --strict` to require both feeds locally.
 
-The newsletter form continues to Substack's subscription page. `scripts/migrate-podcast-cleanup.mjs` is a historical, manually invoked migration, not part of normal builds. The design prototype and unreferenced unique images remain reference material.
+Substack remains linked in the footer. `scripts/migrate-podcast-cleanup.mjs` is a historical, manually invoked migration, not part of normal builds. The design prototype and unreferenced unique images remain reference material.

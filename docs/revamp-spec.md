@@ -94,10 +94,6 @@ Header:
 
 > 150+ conversations with researchers, scientists, and philosophers.
 
-Lede:
-
-> The podcast is a research instrument. Episodes feed directly into published work.
-
 ### Start Here
 
 Six conversations that inform the report, in the horizontal card strip.
@@ -141,15 +137,17 @@ Kicker: `OUT NOW`
 
 Actions: Buy | Read an excerpt
 
-### The Transcendence of Money
+### The Transcendence of Technology
 
-Kicker: `NOVEMBER 2026`
+Kicker: `UPCOMING`
 
-> A separate project on the future of value.
+> Technology augments. A rock augments strength, a fishing rod augments a catch, a computer augments what a mind can hold. It was never the answer. This book is about what happened when we started treating an external tool as a solution to an internal problem, and what a return would look like.
 
-Action: Pre-order
+### Being Human
 
-The money book is off-thesis for the research identity. It gets a real page because it is a real book, but it sits second and it does not appear on the Research page.
+Kicker: `IN PROGRESS`
+
+> Short Stories, Poems, and Essays on Technology and Society.
 
 ---
 
@@ -175,21 +173,13 @@ Action: Enquire
 
 > Ayush Prakash studies how increasingly person-like AI systems are reshaping cognition, identity, agency, and human development in the first AI-native generation, and translates emerging research into public frameworks, policy ideas, and cultural understanding.
 
-> He is Chief of Staff at New Sapience, a deterministic-AI company founded by veterans of DARPA, NASA, and the NSA, where he works on non-LLM machine cognition and leads business operations and institutional capital strategy.
+> He is Chief of Staff at New Sapience, a deterministic-AI company built by veterans of DARPA, NASA, and the NSA, where he works on non-LLM machine cognition and leads business operations and institutional capital strategy.
 
 > He is the author of AI for Gen Z, co-author of published work with neuroscientist Karl Friston in The Montreal Review and Dr. Ran Anbar in Psychology Today, and host of the Ayush Prakash Podcast: 150+ episodes with researchers and thinkers including Friston and Harvard astrophysicist Avi Loeb.
 
 > His current project is The First AI-Native Generation, a flagship research report publishing November 2026.
 
 > Based in Montreal. English and French.
-
----
-
-## Newsletter block (site-wide footer)
-
-> Never miss the research. Sign up for occasional notes from Ayush Prakash.
-
-Field placeholder: `Email Address` · Button: `Submit`
 
 ---
 

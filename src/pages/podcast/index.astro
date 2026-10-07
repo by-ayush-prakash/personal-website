@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { THEMES } from '../../content.config';
-import { themeImage, themeAlt } from '../../lib/themeImage';
 
 const episodes = (await getCollection('podcast')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -12,21 +11,31 @@ const featured = episodes.filter((ep) => ep.data.featured);
 
 <BaseLayout
   title="Podcast | Ayush Prakash"
-  description="150+ conversations with researchers, scientists, and philosophers. The podcast is a research instrument."
+  description="150+ conversations with researchers, scientists, and philosophers."
 >
   <div class="hero">
     <h1 class="dsub" style="max-width:22ch">150+ conversations with researchers, scientists, and philosophers.</h1>
+    <nav class="podcast-platforms" aria-label="Listen to the podcast">
+      <a href="https://open.spotify.com/show/1ILhje5HSua1FEOlTyFAhG" target="_blank" rel="noopener" aria-label="Listen on Spotify" title="Spotify">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M5.4 9.2c4.3-1.3 9.5-.9 13.2 1.4M6.4 12.3c3.5-1 7.7-.6 10.8 1.2m-9.8 1.8c2.7-.7 5.8-.4 8.2.9" fill="none" stroke="#111" stroke-linecap="round" stroke-width="1.7"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@ayushprakashofficial" target="_blank" rel="noopener" aria-label="Watch on YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="5" fill="#FF0033"/><path d="m10 8 6 4-6 4z" fill="#fff"/></svg>
+      </a>
+      <a href="https://apple.co/3qXL37W" target="_blank" rel="noopener" aria-label="Listen on Apple Podcasts" title="Apple Podcasts">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="apple-podcasts-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C844FC"/><stop offset="1" stop-color="#7027D8"/></linearGradient></defs><circle cx="12" cy="12" r="12" fill="url(#apple-podcasts-gradient)"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"><path d="M9.4 7.2a4.2 4.2 0 0 1 5.2 0M7.2 5a7.2 7.2 0 0 1 9.6 0M5.2 15a7.8 7.8 0 0 1 .2-8.4m13.4 0a7.8 7.8 0 0 1 .2 8.4M7.2 17a7.2 7.2 0 0 0 9.6 0"/><path d="M10.2 12.5 11 17a1 1 0 0 0 2 0l.8-4.5a1.9 1.9 0 1 0-3.6 0Z" fill="#fff" stroke="none"/></g></svg>
+      </a>
+    </nav>
   </div>
   <hr class="rule" />
 
   {featured.length > 0 && (
     <div style="padding-top:38px">
-      <div class="sectionhead"><h2>Start Here</h2><span class="meta">Selected conversations &rarr;</span></div>
+      <div class="sectionhead"><h2>Start Here</h2></div>
       <div class="strip">
         {featured.map((ep) => (
           <a class="card" href={`/podcast/${ep.data.slug}`}>
-            <div class="ph"><img src={themeImage(ep.data.theme, 'card')} alt={themeAlt(ep.data.theme)} loading="lazy" /></div>
-            <div class="meta">{ep.data.theme ?? 'Podcast'} &middot; {ep.data.duration ?? ''}</div>
+            {(ep.data.theme || ep.data.duration) && <div class="meta">{ep.data.theme ? `${ep.data.theme} · ` : ''}{ep.data.duration ?? ''}</div>}
             <div class="ct">{ep.data.title}</div>
             <div class="cd">{ep.data.description}</div>
           </a>
@@ -41,7 +50,6 @@ const featured = episodes.filter((ep) => ep.data.featured);
       <button class="on" aria-pressed="true" data-theme="all">All</button>
       {THEMES.map((theme) => <button aria-pressed="false" data-theme={theme}>{theme}</button>)}
     </div>
-    <p class="meta" style="padding-top:14px;max-width:62ch">Browse the complete archive, or filter it by one of the five research themes.</p>
     <div class="tools">
       <input placeholder="Search episodes" type="search" aria-label="Search episodes" />
       <button type="button" data-action="surprise">Surprise me</button>
@@ -53,12 +61,10 @@ const featured = episodes.filter((ep) => ep.data.featured);
         data-theme={ep.data.theme ?? ''}
         data-search={`${ep.data.title} ${ep.data.description}`.toLowerCase()}
       >
-        <div class="thumb"><img src={themeImage(ep.data.theme, 'sq')} alt={themeAlt(ep.data.theme)} loading="lazy" /></div>
         <div>
           <div class="rt">{ep.data.title}</div>
           <div class="rd">{ep.data.description}</div>
         </div>
-        <div class="rm">{ep.data.theme ?? 'Podcast'} &middot; {ep.data.duration ?? ''}</div>
       </a>
     ))}
   </div>
@@ -67,3 +73,39 @@ const featured = episodes.filter((ep) => ep.data.featured);
     import '../../scripts/archiveFilters';
   </script>
 </BaseLayout>
+
+
+<style>
+  .podcast-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .podcast-platforms a {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--hair);
+    border-radius: 50%;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+
+  .podcast-platforms a:hover {
+    transform: translateY(-2px);
+    border-color: var(--ink);
+  }
+
+  .podcast-platforms a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  .podcast-platforms svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+</style>
