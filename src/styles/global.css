@@ -136,7 +136,7 @@ footer.site a:hover{color:var(--ink)}
   gap:clamp(30px,6vw,104px);
   align-items:start;
   text-align:left;
-  padding:clamp(58px,8vw,116px) 0;
+  padding:clamp(32px,4.5vw,68px) 0 clamp(58px,8vw,116px);
 }
 .statement-section h2{
   font-family:var(--serif);font-weight:300;
@@ -169,7 +169,7 @@ footer.site a:hover{color:var(--ink)}
 /* --- the book, image first and the caption beneath it --- */
 .book-feature{
   text-align:center;
-  padding:clamp(48px,7vw,96px) 0 clamp(62px,9vw,128px);
+  padding:clamp(48px,7vw,96px) 0 clamp(30px,4vw,58px);
 }
 .book-feature .cover{
   width:min(400px,74vw);aspect-ratio:2/3;overflow:hidden;margin:0 auto;
