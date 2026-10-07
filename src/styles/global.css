@@ -75,11 +75,6 @@ nav.main a.on{opacity:1;border-bottom:1px solid var(--ink)}
 .filters button.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .tools{display:flex;gap:16px;align-items:center;padding:22px 0;flex-wrap:wrap}
 .tools input{font-family:var(--sans);font-size:14px;background:none;border:0;border-bottom:1px solid var(--rule);padding:9px 2px;min-width:220px;color:var(--ink);outline:none;flex:1}
-.tools button{position:relative;font-size:12.5px;color:var(--muted);background:none;border:0;cursor:pointer;padding-bottom:3px;font-family:var(--sans)}
-.tools button::after{content:"";position:absolute;left:0;right:0;bottom:-20px;border-bottom:1px solid var(--hair)}
-.tools button:hover{color:var(--ink)}
-@media(max-width:520px){.tools button::after{bottom:-8px}}
-
 .subq{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:30px 0;border-top:1px solid var(--hair)}
 .subq .n{font-family:var(--serif);font-weight:300;font-size:24px;color:var(--muted)}
 .subq .t{font-family:var(--serif);font-weight:300;text-transform:uppercase;font-size:14px;letter-spacing:.06em;margin-bottom:8px}
@@ -188,7 +183,6 @@ footer.site a:hover{color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .skip-link{position:absolute;left:20px;top:-80px;z-index:10;background:var(--paper);padding:8px 16px}
 .skip-link:focus{top:8px}
-.tools button:disabled{opacity:.5;cursor:default}
 .prose{overflow-wrap:anywhere}
 .prose img{height:auto}
 /* Long feed URLs must not force mobile grid columns beyond the viewport. */

@@ -41,7 +41,6 @@ const posts = (await getCollection('writing')).sort(
     <div class="sectionhead"><h2>Essays & stories</h2><span class="meta" role="status" aria-live="polite" data-count></span></div>
     <div class="tools">
       <input placeholder="Search writing" type="search" aria-label="Search writing" />
-      <button type="button" data-action="surprise">Surprise me</button>
     </div>
     {posts.map((post) => (
       <a

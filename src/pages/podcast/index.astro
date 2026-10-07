@@ -29,7 +29,6 @@ const episodes = (await getCollection('podcast')).sort(
     <div class="sectionhead"><h2>Episodes</h2><span class="meta" role="status" aria-live="polite" data-count></span></div>
     <div class="tools">
       <input placeholder="Search episodes" type="search" aria-label="Search episodes" />
-      <button type="button" data-action="surprise">Surprise me</button>
     </div>
     {episodes.map((ep) => (
       <a
