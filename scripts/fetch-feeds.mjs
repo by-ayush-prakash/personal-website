@@ -84,6 +84,27 @@ export async function fetchFeed(url, fetchImpl = fetch) {
   return Array.isArray(items) ? items : [items];
 }
 
+export async function fetchSubstackAPI(fetchImpl = fetch) {
+  const url = 'https://ayushprakash.substack.com/api/v1/posts?limit=50&offset=0';
+  const res = await fetchImpl(url, {
+    headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' },
+    signal: AbortSignal.timeout(30_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const posts = await res.json();
+  if (!Array.isArray(posts)) throw new Error('Substack API returned no post list');
+  return posts
+    .filter((post) => post.is_published && post.audience === 'everyone')
+    .map((post) => ({
+      title: post.title,
+      link: post.canonical_url,
+      guid: post.id,
+      pubDate: post.post_date,
+      description: post.description || post.subtitle || '',
+      'content:encoded': post.body_html || '',
+    }));
+}
+
 async function fileExists(p) {
   try {
     await access(p);
@@ -153,9 +174,20 @@ async function run() {
     try {
       items = await fetchFeed(feed.url);
     } catch (err) {
-      console.error(`[fetch-feeds] ${feed.source} unreachable: ${err.message}`);
-      failedFeeds.push(feed.source);
-      continue;
+      if (feed.source === 'substack') {
+        try {
+          items = await fetchSubstackAPI();
+          console.warn(`[fetch-feeds] Substack RSS unavailable (${err.message}); using Substack's public API`);
+        } catch (fallbackError) {
+          console.error(`[fetch-feeds] substack unreachable: RSS ${err.message}; API ${fallbackError.message}`);
+          failedFeeds.push(feed.source);
+          continue;
+        }
+      } else {
+        console.error(`[fetch-feeds] ${feed.source} unreachable: ${err.message}`);
+        failedFeeds.push(feed.source);
+        continue;
+      }
     }
 
     for (const item of items) {

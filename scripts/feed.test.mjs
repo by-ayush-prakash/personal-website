@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sourceKey, audioKey, collisionSlug } from './lib/feedIdentity.mjs';
-import { fetchFeed, replaceFrontmatterTitle } from './fetch-feeds.mjs';
+import { fetchFeed, fetchSubstackAPI, replaceFrontmatterTitle } from './fetch-feeds.mjs';
 
 test('episode identity survives revised titles, query strings and audio destinations', () => {
   assert.equal(sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/Old-name-e3pnipl'), sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/New-name-e3pnipl?utm_source=x'));
@@ -20,6 +20,18 @@ test('revised podcast titles update frontmatter while preserving episode URLs an
     replaceFrontmatterTitle(original, 'Guest: The New Title'),
     '---\ntitle: "Guest: The New Title"\nslug: "stable-old-title"\nfeatured: true\n---\nEpisode text.'
   );
+});
+
+test('Substack API fallback imports only published public posts', async () => {
+  const posts = await fetchSubstackAPI(async () => new Response(JSON.stringify([
+    { id: 1, title: 'Public post', canonical_url: 'https://example.substack.com/p/public', post_date: '2026-10-01', description: 'A description', body_html: '<p>Body</p>', is_published: true, audience: 'everyone' },
+    { id: 2, title: 'Paid post', canonical_url: 'https://example.substack.com/p/paid', is_published: true, audience: 'only_paid' },
+    { id: 3, title: 'Draft', canonical_url: 'https://example.substack.com/p/draft', is_published: false, audience: 'everyone' },
+  ])));
+  assert.equal(posts.length, 1);
+  assert.equal(posts[0].title, 'Public post');
+  assert.equal(posts[0].link, 'https://example.substack.com/p/public');
+  assert.equal(posts[0]['content:encoded'], '<p>Body</p>');
 });
 
 test('an inaccessible or malformed feed is reported instead of returning empty success', async () => {
