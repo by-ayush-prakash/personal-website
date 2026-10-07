@@ -85,7 +85,7 @@ export async function fetchFeed(url, fetchImpl = fetch) {
 }
 
 export async function fetchSubstackAPI(fetchImpl = fetch) {
-  const url = 'https://ayushprakash.substack.com/api/v1/posts?limit=50&offset=0';
+  const url = 'https://ayushprakash.substack.com/api/v1/posts?limit=20&offset=0';
   const res = await fetchImpl(url, {
     headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' },
     signal: AbortSignal.timeout(30_000),
@@ -93,6 +93,32 @@ export async function fetchSubstackAPI(fetchImpl = fetch) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const posts = await res.json();
   if (!Array.isArray(posts)) throw new Error('Substack API returned no post list');
+  return posts
+    .filter((post) => post.is_published && post.audience === 'everyone')
+    .map((post) => ({
+      title: post.title,
+      link: post.canonical_url,
+      guid: post.id,
+      pubDate: post.post_date,
+      description: post.description || post.subtitle || '',
+      'content:encoded': post.body_html || '',
+    }));
+}
+
+export async function fetchSubstackReader(fetchImpl = fetch) {
+  // GitHub-hosted runners can be blocked by Substack even for public feeds.
+  // Jina Reader fetches the public Substack API and returns its JSON payload.
+  const res = await fetchImpl('https://r.jina.ai/http://ayushprakash.substack.com/api/v1/posts?limit=20%26offset=0', {
+    headers: { Accept: 'text/plain' },
+    signal: AbortSignal.timeout(45_000),
+  });
+  if (!res.ok) throw new Error(`Reader HTTP ${res.status}`);
+  const text = await res.text();
+  const marker = 'Markdown Content:\n';
+  const payload = text.slice(text.indexOf(marker) + marker.length).trim();
+  if (!text.includes(marker)) throw new Error('Reader returned no post data');
+  const posts = JSON.parse(payload);
+  if (!Array.isArray(posts)) throw new Error('Reader returned no post list');
   return posts
     .filter((post) => post.is_published && post.audience === 'everyone')
     .map((post) => ({
@@ -165,7 +191,7 @@ async function run() {
 
   const added = { podcast: 0, writing: 0 };
   const skipped = { podcast: 0, writing: 0 };
-  let updatedPodcastTitles = 0;
+  const updatedTitles = { podcast: 0, writing: 0 };
   let truncatedCount = 0;
   const failedFeeds = [];
 
@@ -179,9 +205,14 @@ async function run() {
           items = await fetchSubstackAPI();
           console.warn(`[fetch-feeds] Substack RSS unavailable (${err.message}); using Substack's public API`);
         } catch (fallbackError) {
-          console.error(`[fetch-feeds] substack unreachable: RSS ${err.message}; API ${fallbackError.message}`);
-          failedFeeds.push(feed.source);
-          continue;
+          try {
+            items = await fetchSubstackReader();
+            console.warn(`[fetch-feeds] Substack API unavailable (${fallbackError.message}); using public feed relay`);
+          } catch (readerError) {
+            console.error(`[fetch-feeds] substack unreachable: RSS ${err.message}; API ${fallbackError.message}; relay ${readerError.message}`);
+            failedFeeds.push(feed.source);
+            continue;
+          }
         }
       } else {
         console.error(`[fetch-feeds] ${feed.source} unreachable: ${err.message}`);
@@ -207,11 +238,13 @@ async function run() {
       const existing = identities.sources.get(sourceKey(link))
         ?? (isEpisode && audioUrl ? identities.urls.get(audioKey(audioUrl)) : undefined);
       if (existing) {
-        if (isEpisode && existing.title !== title) {
+        // Keep feed-owned titles current while preserving the stable page URL,
+        // hand-edited content, and all other frontmatter.
+        if ((isEpisode || feed.source === 'substack') && existing.title !== title) {
           const content = await readFile(existing.path, 'utf8');
           await writeFile(existing.path, replaceFrontmatterTitle(content, title), 'utf8');
           existing.title = title;
-          updatedPodcastTitles++;
+          updatedTitles[collection]++;
         }
         skipped[collection]++;
         continue;
@@ -278,7 +311,8 @@ async function run() {
   }
 
   console.log(`Podcast: ${added.podcast} added, ${skipped.podcast} already present`);
-  console.log(`Podcast titles refreshed from feed: ${updatedPodcastTitles}`);
+  console.log(`Podcast titles refreshed from feed: ${updatedTitles.podcast}`);
+  console.log(`Substack titles refreshed from feed: ${updatedTitles.writing}`);
   console.log(`Writing: ${added.writing} added, ${skipped.writing} already present`);
   console.log(`Truncated (paywall-length) writing items this run: ${truncatedCount}`);
   if (failedFeeds.length) {

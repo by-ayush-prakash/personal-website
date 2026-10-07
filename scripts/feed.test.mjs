@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sourceKey, audioKey, collisionSlug } from './lib/feedIdentity.mjs';
-import { fetchFeed, fetchSubstackAPI, replaceFrontmatterTitle } from './fetch-feeds.mjs';
+import { fetchFeed, fetchSubstackAPI, fetchSubstackReader, replaceFrontmatterTitle } from './fetch-feeds.mjs';
 
 test('episode identity survives revised titles, query strings and audio destinations', () => {
   assert.equal(sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/Old-name-e3pnipl'), sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/New-name-e3pnipl?utm_source=x'));
@@ -28,6 +28,19 @@ test('Substack API fallback imports only published public posts', async () => {
     { id: 2, title: 'Paid post', canonical_url: 'https://example.substack.com/p/paid', is_published: true, audience: 'only_paid' },
     { id: 3, title: 'Draft', canonical_url: 'https://example.substack.com/p/draft', is_published: false, audience: 'everyone' },
   ])));
+  assert.equal(posts.length, 1);
+  assert.equal(posts[0].title, 'Public post');
+  assert.equal(posts[0].link, 'https://example.substack.com/p/public');
+  assert.equal(posts[0]['content:encoded'], '<p>Body</p>');
+});
+
+test('Substack Reader fallback extracts only published public posts', async () => {
+  const payload = [
+    { id: 1, title: 'Public post', canonical_url: 'https://example.substack.com/p/public', post_date: '2026-10-01', subtitle: 'A subtitle', body_html: '<p>Body</p>', is_published: true, audience: 'everyone' },
+    { id: 2, title: 'Paid post', is_published: true, audience: 'only_paid' },
+    { id: 3, title: 'Draft', is_published: false, audience: 'everyone' },
+  ];
+  const posts = await fetchSubstackReader(async () => new Response(`Title: Example\n\nMarkdown Content:\n${JSON.stringify(payload)}`));
   assert.equal(posts.length, 1);
   assert.equal(posts[0].title, 'Public post');
   assert.equal(posts[0].link, 'https://example.substack.com/p/public');
