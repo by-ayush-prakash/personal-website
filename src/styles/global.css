@@ -62,6 +62,7 @@ nav.main a.on{opacity:1;border-bottom:1px solid var(--ink)}
 .row .rm{font-size:12.5px;line-height:1.45;color:var(--muted);text-align:right;padding-top:5px;text-wrap:pretty}
 .row:hover .rt{opacity:.55}
 .row.nometa{grid-template-columns:1fr}
+.current-work > .row:last-child{margin-bottom:clamp(7.2px,1.02vw,12.6px)}
 @media(max-width:820px){
   .row{grid-template-columns:1fr}
   .row .rm{grid-column:1;text-align:left;margin-top:9px}
