@@ -37,7 +37,7 @@ const episodes = (await getCollection('podcast')).sort(
         data-search={`${ep.data.title} ${ep.data.description}`.toLowerCase()}
       >
         <div class="rt">{ep.data.title}</div>
-        <div class="rm">Podcast{ep.data.duration ? ` · ${ep.data.duration}` : ''}</div>
+        <div class="rm">{ep.data.duration || ''}</div>
       </a>
     ))}
   </div>
