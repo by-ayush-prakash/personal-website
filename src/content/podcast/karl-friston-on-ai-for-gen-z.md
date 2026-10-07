@@ -1,5 +1,5 @@
 ---
-title: "Karl Friston on AI for Gen Z"
+title: "Karl Friston: Why ChatGPT Is a Mirror With Nothing Behind It"
 slug: "karl-friston-on-ai-for-gen-z"
 date: "2026-01-27T17:00:00.000Z"
 description: "Dr. Karl Friston is Professor of Neuroscience at UCL and one of the most cited scientists alive. His work on the free energy principle has transformed our understanding of the brain, consciousness, and intelligence.Probably the coolest thing that's happened to me, the world's most influential neu..."

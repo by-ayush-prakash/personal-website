@@ -1,5 +1,5 @@
 ---
-title: "Why Gen Z Are Struggling - Jamie Meyer | Gen Z Diplomat Podcast 72"
+title: "Jamie Meyer: Gen Z Has More Opportunity Than Ever. So Why Are They So Lost?"
 slug: "why-gen-z-are-struggling-jamie-meyer-gen-z-diplomat-podcast-72"
 date: "2023-10-06T17:30:00.000Z"
 description: "Jamie Meyer is the founder of Nine Carat, an independent, Australian-founded, international agency that specializes in pathways and applications. She is also an entrepreneur, coach, mentor, advisor, speaker, and designer."

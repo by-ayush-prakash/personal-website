@@ -1,5 +1,5 @@
 ---
-title: "Mila Researcher on How AI (not ChatGPT) Can Fix The Planet - Alex Hernandez-Garcia"
+title: "Alex Hernández-García: What We Lose When AI Means ChatGPT"
 slug: "mila-researcher-on-how-ai-not-chatgpt-can-fix-the-planet-alex-hernandez-garcia"
 date: "2026-03-26T12:19:00.000Z"
 description: "For this episode, I’m joined by Alex Hernandez Garcia, a core academic member at Mila (the Quebec AI Institute) and a professor at the Université de Montréal. In this episode, we move past the hype to expose the friction between corporate monopolies and open science, the massive disconnect betwee..."

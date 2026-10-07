@@ -1,5 +1,5 @@
 ---
-title: "AI Expert: AI can't replace artists (but it will destroy this...) - Dr. Maya Ackerman"
+title: "Maya Ackerman: Why AI Hallucinations Are the Engine of Creativity"
 slug: "ai-expert-ai-can-t-replace-artists-but-it-will-destroy-this-dr-maya-ackerman"
 date: "2025-12-05T15:00:00.000Z"
 description: "Dr. Maya Ackerman is a world-renowned AI researcher, generative AI pioneer, and CEO and Co-Founder of WaveAI. She is an Associate Professor at Santa Clara University and the author of &quot;Creative Machines: AI, Art &amp; Us.&quot; In a world where artificial intelligence is rapidly transforming..."

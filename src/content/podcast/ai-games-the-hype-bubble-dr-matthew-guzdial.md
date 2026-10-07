@@ -1,5 +1,5 @@
 ---
-title: "AI, Games & The Hype Bubble - Dr. Matthew Guzdial"
+title: "Matthew Guzdial: What Happens When Cheap AI Disappears?"
 slug: "ai-games-the-hype-bubble-dr-matthew-guzdial"
 date: "2026-06-17T14:02:32.000Z"
 description: "Dr. Matthew Guzdial joins the podcast to break down how (and if!) AI is reshaping video game design, and why the gap between what&#39;s being promised and what&#39;s actually shipping is bigger than anyone wants to admit. We also get into VR as a cautionary tale; basically what happens when hype..."

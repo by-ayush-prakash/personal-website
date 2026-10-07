@@ -1,5 +1,5 @@
 ---
-title: "Psychology & Neuroscience Gen Z Must Know - Ellice Whyte | Gen Z Diplomat Podcast #76"
+title: "Ellis Whyte: What Social Media Is Doing to Your Brain"
 slug: "psychology-neuroscience-gen-z-must-know-ellice-whyte-gen-z-diplomat-podcast-76"
 date: "2023-12-08T18:25:00.000Z"
 description: "Ellice is an accomplished business psychologist with a passion for unlocking the potential of individuals and organisations. She has an extensive international background working with renowned household names across various private and public industries. Currently pursuing a doctorate, Ellice is..."

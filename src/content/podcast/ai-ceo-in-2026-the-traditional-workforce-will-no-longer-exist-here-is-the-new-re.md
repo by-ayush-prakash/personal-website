@@ -1,5 +1,5 @@
 ---
-title: "AI CEO: \"In 2026, The Traditional Workforce Will No Longer Exist. Here Is The New Reality.\""
+title: "Shashank Tiwari: Why AI Will Accelerate and Hit a Wall in 2026"
 slug: "ai-ceo-in-2026-the-traditional-workforce-will-no-longer-exist-here-is-the-new-re"
 date: "2026-01-01T00:45:58.000Z"
 description: "How is the boardroom actually preparing for the year 2026? I’m joined by Shashank Tiwari, the CEO of Uno.AI and a seasoned Silicon Valley executive. We discuss the massive transition from the &quot;AI experimentation&quot; phase of 2024 to the &quot;operational reality&quot; of 2026, and he revea..."

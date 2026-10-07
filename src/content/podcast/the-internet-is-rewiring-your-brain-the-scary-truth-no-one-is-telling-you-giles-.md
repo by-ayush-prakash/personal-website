@@ -1,5 +1,5 @@
 ---
-title: "\"The Internet Is Rewiring Your Brain: The Scary Truth No One Is Telling You\": Giles Crouch"
+title: "Giles Crouch: How The Internet Really Changed Humanity"
 slug: "the-internet-is-rewiring-your-brain-the-scary-truth-no-one-is-telling-you-giles-"
 date: "2025-12-28T17:00:00.000Z"
 description: "How has the internet actually changed humanity? In this episode, I’m joined by digital anthropologist Giles Crouch to go deep into the \"Human-Tech Intersect.\" Giles has spent over 20 years decoding the invisible cultural forces that dictate how we buy, believe, and belong. We discuss the massive..."

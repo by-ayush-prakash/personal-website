@@ -1,5 +1,5 @@
 ---
-title: "Alberta's Top AI Researcher on What the Hype Gets Wrong - Matthew Taylor"
+title: "Matthew E. Taylor: Who Controls AI After It Leaves the Lab?"
 slug: "alberta-s-top-ai-researcher-on-what-the-hype-gets-wrong-matthew-taylor"
 date: "2026-04-21T18:00:00.000Z"
 description: "For this episode, I'm joined by Professor Matthew Taylor, an Amii Fellow and Canada CIFAR AI Chair at Amii and a Professor of Computing Science at the University of Alberta. He is the Director of the Intelligent Robot Learning (IRL) Lab and a Principal Investigator at the Reinforcement Learning &..."

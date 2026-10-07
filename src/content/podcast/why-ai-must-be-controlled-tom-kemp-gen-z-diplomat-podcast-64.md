@@ -1,5 +1,5 @@
 ---
-title: "Why AI Must Be Controlled - Tom Kemp | Gen Z Diplomat Podcast 64"
+title: "Tom Kemp: Big Tech Is Tracking You, AI Is Coming for Jobs and Cyberwar Could Shut Everything Down"
 slug: "why-ai-must-be-controlled-tom-kemp-gen-z-diplomat-podcast-64"
 date: "2023-07-23T17:44:08.000Z"
 description: "Tom Kemp is a Silicon Valley-based entrepreneur, investor, and policy advisor. Tom is also the author of Containing Big Tech: How to Protect Our Civil Rights, Economy, and Democracy. Tom was the founder and CEO of Centrify, a leading cybersecurity cloud provider that amassed over two thousand ent..."

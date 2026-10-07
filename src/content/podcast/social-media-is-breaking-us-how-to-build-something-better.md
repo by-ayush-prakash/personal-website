@@ -1,5 +1,5 @@
 ---
-title: "“Social Media Is Breaking Us” – How to Build Something Better"
+title: "Julien Belmont: Social Media Is Rewiring Us. Can We Build Something Better?"
 slug: "social-media-is-breaking-us-how-to-build-something-better"
 date: "2025-04-25T17:00:00.000Z"
 description: "Julien Belmont is the CEO and Co-Founder of Life, the Humane Social Network. Find Julien: TikTok: https://www.tiktok.com/@julienbelmont1 ⁨@JulienBelmont1⁩ Timestamps: 0:00 Problems with Social Media 9:52 Bullying 22:45 Life, The Humane Network 27:45 Addiction and Connection 32:50 Life, Continued..."

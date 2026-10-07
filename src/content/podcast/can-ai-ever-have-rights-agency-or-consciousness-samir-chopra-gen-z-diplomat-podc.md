@@ -1,5 +1,5 @@
 ---
-title: "Can AI Ever Have Rights, Agency, Or Consciousness? - Samir Chopra | Gen Z Diplomat Podcast 66"
+title: "Samir Chopra: Social Media Is Rewriting Your Mind and AI Will Change What It Means to Be Human"
 slug: "can-ai-ever-have-rights-agency-or-consciousness-samir-chopra-gen-z-diplomat-podc"
 date: "2023-08-09T19:00:00.000Z"
 description: "Samir Chopra is a professor of philosophy at Brooklyn College of The City University of New York. He has written books on the politics of technology, the legal theory of artificial intelligence, military aviation history (his latest book in this genre has just been released), and cricket. This ep..."

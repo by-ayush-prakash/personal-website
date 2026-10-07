@@ -1,5 +1,5 @@
 ---
-title: "Clairvoyant: Technology Is Destroying Spirituality"
+title: "Alexandra Goldwell: A Clairvoyant Says That Technology Is Destroying Spirituality"
 slug: "clairvoyant-technology-is-destroying-spirituality"
 date: "2025-12-19T21:35:59.000Z"
 description: "Alexandra Goldwell, MA, RCC, is a therapist, clairvoyant healer, and consciousness educator with over 35 years of experience bridging Western psychology with ancient wisdom traditions. In a world where technology is rewiring human consciousness at unprecedented speed, where children and young peo..."

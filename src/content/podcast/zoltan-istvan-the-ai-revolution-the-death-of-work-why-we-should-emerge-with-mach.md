@@ -1,5 +1,5 @@
 ---
-title: "Zoltan Istvan: The AI Revolution, The Death of Work & Why We Should Emerge with Machines"
+title: "Zoltan Istvan: If AI Ends Work, What Comes Next?"
 slug: "zoltan-istvan-the-ai-revolution-the-death-of-work-why-we-should-emerge-with-mach"
 date: "2026-01-07T14:39:22.000Z"
 description: "I’m joined by Zoltan Istvan, the world’s most influential transhumanist and candidate for Governor of California. Zoltan reveals the radical, high-stakes shifts occurring in the minds of the world's most powerful disruptors as they prepare for a world where biology is no longer the limit. We dive..."

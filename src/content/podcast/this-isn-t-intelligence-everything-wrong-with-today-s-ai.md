@@ -1,5 +1,5 @@
 ---
-title: "“This Isn’t Intelligence” – Everything Wrong With Today’s AI"
+title: "Chris Hood: AI Is Overhyped, Misunderstood and Changing How We Think"
 slug: "this-isn-t-intelligence-everything-wrong-with-today-s-ai"
 date: "2025-04-18T17:00:00.000Z"
 description: "Chris Hood is a strategist, speaker, and author of Customer Transformation and Infailable. Find Chris: https://chrishood.com/ https://www.youtube.com/c/chrishood Timestamps: 0:00 AI Sucks 3:15 Responsibility of AI 6:20 ChatGPT 10:31: Hype 14:27 Infailable 17:52 Inferiority to AI 21:23 AI Before C..."

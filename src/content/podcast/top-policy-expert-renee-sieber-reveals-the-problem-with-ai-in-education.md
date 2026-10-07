@@ -1,5 +1,5 @@
 ---
-title: "Top Policy Expert Renee Sieber Reveals The Problem With AI In Education"
+title: "Renée Sieber: We’re Forcing AI Into Schools Before We Know What It Does to Students"
 slug: "top-policy-expert-renee-sieber-reveals-the-problem-with-ai-in-education"
 date: "2026-07-28T17:00:00.000Z"
 description: "Dr. Renée Sieber joins the podcast to break down how AI policy in Canada often fails to protect people, especially students and young people who do not know better, and why the shift away from actual governance toward quick institutional adoption is threatening civil discourse. We get into the ex..."

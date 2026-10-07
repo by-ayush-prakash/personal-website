@@ -1,5 +1,5 @@
 ---
-title: "The Stories We Tell Ourselves Are Killing Us - Nick Hunt"
+title: "Nick Hunt: The Stories We Tell Ourselves Are Killing Us"
 slug: "the-stories-we-tell-ourselves-are-killing-us-nick-hunt"
 date: "2026-06-07T15:10:45.000Z"
 description: "Nick Hunt joins the podcast to break down why the stories our civilisation tells itself are broken, why progress is one of the most limiting and overlooked myths holding humanity back, and what it means that most of us are sleepwalking through a collapsing world. We also get into the uncivilised..."

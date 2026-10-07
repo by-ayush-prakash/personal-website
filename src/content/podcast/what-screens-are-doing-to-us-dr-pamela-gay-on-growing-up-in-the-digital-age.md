@@ -1,5 +1,5 @@
 ---
-title: "“What Screens Are Doing to Us” – Dr. Pamela Gay on Growing Up in the Digital Age"
+title: "Dr. Pamela Gay: How Technology Is Changing What It Means to Be Human"
 slug: "what-screens-are-doing-to-us-dr-pamela-gay-on-growing-up-in-the-digital-age"
 date: "2025-02-28T15:00:00.000Z"
 description: "This is episode 119 of the Gen Z Diplomat Podcast. Pamela L. Gay is an American astronomer, educator, podcaster, and writer, best known for her work in astronomical podcasting and citizen science astronomy projects. She is a senior education and communication specialist and senior scientist for t..."

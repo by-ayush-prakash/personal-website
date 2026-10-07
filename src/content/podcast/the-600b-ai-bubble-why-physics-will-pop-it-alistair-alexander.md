@@ -1,5 +1,5 @@
 ---
-title: "The $600B AI Bubble: Why Physics Will Pop It - Alistair Alexander"
+title: "Alistair Alexander: What Happens When AI Runs Out of Power?"
 slug: "the-600b-ai-bubble-why-physics-will-pop-it-alistair-alexander"
 date: "2026-03-03T17:30:00.000Z"
 description: "For this episode, I’m joined by Alistair Alexander, a researcher specializing in the ecologies of technology. In this episode, Alistair and I discuss the underlying physical architecture of AI—specifically how the digital world isn&#39;t ethereal, but a massive industrial system bound by the hard..."

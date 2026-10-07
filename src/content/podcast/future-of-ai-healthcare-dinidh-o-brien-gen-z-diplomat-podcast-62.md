@@ -1,5 +1,5 @@
 ---
-title: "Future of AI Healthcare - Dinidh O'Brien | Gen Z Diplomat Podcast 62 "
+title: "Dinidh O'Brien: The Next Industrial Revolution Will Change Everything"
 slug: "future-of-ai-healthcare-dinidh-o-brien-gen-z-diplomat-podcast-62"
 date: "2023-06-30T19:00:00.000Z"
 description: "Dinidh O’Brien is a medical futurist, public relations executive, and AI healthcare expert. He is the head of International and Public Relations for the Donate Your Data Foundation, working to solve the issues of privacy and access when it comes to life-saving medical data for researchers. This e..."

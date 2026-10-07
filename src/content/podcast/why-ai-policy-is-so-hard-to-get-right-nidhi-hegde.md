@@ -1,5 +1,5 @@
 ---
-title: "Why AI Policy Is So Hard to Get Right – Nidhi Hegde"
+title: "Nidhi Hegde: AI Isn’t Democratized If You Have Access but No Agency"
 slug: "why-ai-policy-is-so-hard-to-get-right-nidhi-hegde"
 date: "2026-07-21T17:00:00.000Z"
 description: "Nidhi Hegde joins the podcast to break down how AI policy in Canada is being shaped by people who can't fully explain the systems they're writing rules for, and why the gap between what regulation promises and what it actually prevents is bigger than anyone wants to admit. We also get into what i..."

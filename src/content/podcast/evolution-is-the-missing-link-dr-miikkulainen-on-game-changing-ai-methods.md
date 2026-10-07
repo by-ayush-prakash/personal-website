@@ -1,5 +1,5 @@
 ---
-title: "“Evolution Is the Missing Link” – Dr. Miikkulainen on Game-Changing AI Methods"
+title: "Risto Miikkulainen: How Evolution Makes AI Creative"
 slug: "evolution-is-the-missing-link-dr-miikkulainen-on-game-changing-ai-methods"
 date: "2024-10-19T19:00:00.000Z"
 description: "This is Episode 101 of the Gen Z Diplomat Podcast. Risto Miikkulainen is a Professor of Computer Science at the University of Texas at Austin and VP of AI Research at Cognizant Advanced AI Labs. He received an M.S. in Engineering from the Helsinki University of Technology (now Aalto University) i..."

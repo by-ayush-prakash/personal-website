@@ -1,5 +1,5 @@
 ---
-title: "Is AI Raising Entrepreneurs? – Amy Love"
+title: "Amy Love: The Glass Generation Is Growing Up on Screens and School Isn't Ready"
 slug: "is-ai-raising-entrepreneurs-amy-love"
 date: "2025-07-02T17:00:00.000Z"
 description: "This is episode 138 of the Ayush Prakash Podcast. Amy Love is the author of the forthcoming book Raising Entrepreneurs: Preparing Kids for Success in the Age of AI. In this new book, she explores how to foster entrepreneurial mindsets in children to help them thrive in a rapidly evolving world. G..."

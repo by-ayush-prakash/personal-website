@@ -1,5 +1,5 @@
 ---
-title: "How AI Could Improve Education - Juliette Denny | Gen Z Diplomat Podcast #88"
+title: "Juliette Denny: The Education System Was Never Built for Your Brain"
 slug: "how-ai-could-improve-education-juliette-denny-gen-z-diplomat-podcast-88"
 date: "2024-05-31T17:30:00.000Z"
 description: "With over 20 years in the Learning and Development and e-learning industry, Juliette has pioneered the use of gamification to transform corporate learning experiences. Her passion for sparking curiosity stems from an educational journey overcoming early academic setbacks to earn a postgraduate de..."

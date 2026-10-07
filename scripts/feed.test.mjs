@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sourceKey, audioKey, collisionSlug } from './lib/feedIdentity.mjs';
-import { fetchFeed } from './fetch-feeds.mjs';
+import { fetchFeed, replaceFrontmatterTitle } from './fetch-feeds.mjs';
 
 test('episode identity survives revised titles, query strings and audio destinations', () => {
   assert.equal(sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/Old-name-e3pnipl'), sourceKey('https://podcasters.spotify.com/pod/show/show/episodes/New-name-e3pnipl?utm_source=x'));
@@ -12,6 +12,14 @@ test('episode identity survives revised titles, query strings and audio destinat
 test('same-title posts get stable, distinct collision slugs', () => {
   assert.notEqual(collisionSlug('a-title', 'one'), collisionSlug('a-title', 'two'));
   assert.equal(collisionSlug('a-title', 'one'), collisionSlug('a-title', 'one'));
+});
+
+test('revised podcast titles update frontmatter while preserving episode URLs and content', () => {
+  const original = '---\ntitle: "Old title"\nslug: "stable-old-title"\nfeatured: true\n---\nEpisode text.';
+  assert.equal(
+    replaceFrontmatterTitle(original, 'Guest: The New Title'),
+    '---\ntitle: "Guest: The New Title"\nslug: "stable-old-title"\nfeatured: true\n---\nEpisode text.'
+  );
 });
 
 test('an inaccessible or malformed feed is reported instead of returning empty success', async () => {

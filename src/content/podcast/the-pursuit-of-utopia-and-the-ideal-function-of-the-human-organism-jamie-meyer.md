@@ -1,5 +1,5 @@
 ---
-title: "The Pursuit of Utopia and the Ideal Function of the Human Organism - Jamie Meyer"
+title: "Jamie Meyer: Why Society Has Lost Its Sense of Self"
 slug: "the-pursuit-of-utopia-and-the-ideal-function-of-the-human-organism-jamie-meyer"
 date: "2025-11-27T18:30:00.000Z"
 description: "Jamie Meyer is the founder of Nine Carat, a social architect, and a dear, dear friend. This is episode 150 of the Ayush Prakash Podcast. What a run it&#39;s been. And we shall continue! In this episode, we cover: - What is attachment vs love? - The grey areas between attachment and detachment - U..."

@@ -1,5 +1,5 @@
 ---
-title: "Making AI Transparent & Safe - Rob Eleveld | Gen Z Diplomat Podcast #93"
+title: "Rob Eleveld: Big Tech Took Your Data. Now It’s Training AI With It"
 slug: "making-ai-transparent-safe-rob-eleveld-gen-z-diplomat-podcast-93"
 date: "2024-08-09T12:20:00.000Z"
 description: "Rob Eleveld is the Chairman of Transparency Coalition. Due to concerns around the speed and scale of Generative AI rollout by BigTech, he has co-founded Transparency Coalition.ai, a 501c4 non-profit that advocates for transparency around the usage of “training data,” the products of human imagina..."

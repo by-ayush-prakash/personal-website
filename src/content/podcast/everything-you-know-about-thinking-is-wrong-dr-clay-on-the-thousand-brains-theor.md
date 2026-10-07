@@ -1,5 +1,5 @@
 ---
-title: "“Everything You Know About Thinking Is Wrong” – Dr. Clay on the Thousand Brains Theory"
+title: "Viviane Clay: Intelligence Needs Movement"
 slug: "everything-you-know-about-thinking-is-wrong-dr-clay-on-the-thousand-brains-theor"
 date: "2024-12-11T17:47:00.000Z"
 description: "This is episode 109.Dr. Viviane Clay is a researcher at Numenta. The Thousand Brains Project is a collaborative, open-source initiative that focuses on developing a new type of artificial intelligence based on a sensorimotor framework for intelligence, the Thousand Brains Theory.Connect with Dr...."

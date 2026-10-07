@@ -1,5 +1,5 @@
 ---
-title: "10 Truths Every Teen Must Know Before Adulthood - Dr. Ran Anbar"
+title: "Dr. Ran Anbar: What Every Teen Needs to Know Before Adulthood"
 slug: "10-truths-every-teen-must-know-before-adulthood-dr-ran-anbar"
 date: "2025-08-22T19:34:02.000Z"
 description: "Dr. Ran Anbar is a pediatric pulmonologist and hypnosis expert who has helped over 8,000 children harness their inner power to overcome mental and physical health challenges. In a generation facing unprecedented levels of anxiety, depression, and social media-driven isolation, how do we empower t..."

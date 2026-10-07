@@ -3,10 +3,9 @@
 // `astro build` itself — the generated .md files are committed so the site
 // still builds when a feed is unreachable (CLAUDE.md's architecture rule).
 //
-// Idempotent by construction: a destination file is only ever written once.
-// If `src/content/<collection>/<slug>.md` already exists, this run skips it
-// entirely — no re-write, no field merge — so hand-edited frontmatter
-// (theme, featured) can never be clobbered by a re-run.
+// New items are added without overwriting existing content. Podcast titles are
+// refreshed from the feed by stable source/audio identity; other hand-edited
+// frontmatter and episode URLs are preserved.
 
 import { writeFile, mkdir, access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -97,15 +96,22 @@ async function fileExists(p) {
 async function existingIdentities(collection) {
   const directory = path.join(CONTENT_DIR, collection);
   const files = await readdir(directory);
-  const urls = new Set();
-  const sources = new Set();
+  const urls = new Map();
+  const sources = new Map();
 
   for (const file of files.filter((name) => name.endsWith('.md'))) {
     const content = await readFile(path.join(directory, file), 'utf8');
+    const record = {
+      path: path.join(directory, file),
+      title: (() => {
+        const match = content.match(/^title:\s*(.+)$/m);
+        try { return match ? JSON.parse(match[1]) : ''; } catch { return ''; }
+      })(),
+    };
     const match = content.match(/^audioUrl:\s*"([^"]+)"/m);
-    if (match) urls.add(audioKey(match[1]));
+    if (match) urls.set(audioKey(match[1]), record);
     const source = content.match(/^sourceUrl:\s*"([^"]+)"/m);
-    if (source) sources.add(sourceKey(source[1]));
+    if (source) sources.set(sourceKey(source[1]), record);
   }
 
   return { urls, sources };
@@ -126,6 +132,10 @@ function frontmatter(fields) {
   return lines.join('\n');
 }
 
+export function replaceFrontmatterTitle(content, title) {
+  return content.replace(/^title:\s*.+$/m, `title: ${yamlValue(title)}`);
+}
+
 async function run() {
   await mkdir(path.join(CONTENT_DIR, 'podcast'), { recursive: true });
   await mkdir(path.join(CONTENT_DIR, 'writing'), { recursive: true });
@@ -134,6 +144,7 @@ async function run() {
 
   const added = { podcast: 0, writing: 0 };
   const skipped = { podcast: 0, writing: 0 };
+  let updatedPodcastTitles = 0;
   let truncatedCount = 0;
   const failedFeeds = [];
 
@@ -161,7 +172,15 @@ async function run() {
       // stable, so use it as the episode identity and avoid creating a second
       // page when only the title changes.
       const identities = isEpisode ? podcast : writing;
-      if (identities.sources.has(sourceKey(link)) || (isEpisode && audioUrl && identities.urls.has(audioKey(audioUrl)))) {
+      const existing = identities.sources.get(sourceKey(link))
+        ?? (isEpisode && audioUrl ? identities.urls.get(audioKey(audioUrl)) : undefined);
+      if (existing) {
+        if (isEpisode && existing.title !== title) {
+          const content = await readFile(existing.path, 'utf8');
+          await writeFile(existing.path, replaceFrontmatterTitle(content, title), 'utf8');
+          existing.title = title;
+          updatedPodcastTitles++;
+        }
         skipped[collection]++;
         continue;
       }
@@ -219,13 +238,15 @@ async function run() {
       };
 
       await writeFile(filePath, frontmatter(fields) + body.trim() + '\n', 'utf8');
-      identities.sources.add(sourceKey(link));
-      if (isEpisode && audioUrl) identities.urls.add(audioKey(audioUrl));
+      const record = { path: filePath, title };
+      identities.sources.set(sourceKey(link), record);
+      if (isEpisode && audioUrl) identities.urls.set(audioKey(audioUrl), record);
       added[collection]++;
     }
   }
 
   console.log(`Podcast: ${added.podcast} added, ${skipped.podcast} already present`);
+  console.log(`Podcast titles refreshed from feed: ${updatedPodcastTitles}`);
   console.log(`Writing: ${added.writing} added, ${skipped.writing} already present`);
   console.log(`Truncated (paywall-length) writing items this run: ${truncatedCount}`);
   if (failedFeeds.length) {

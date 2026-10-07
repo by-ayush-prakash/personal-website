@@ -1,5 +1,5 @@
 ---
-title: "Being Human In The Age of AI - Jeff Burningham"
+title: "Jeff Burningham: As Machines Get Smarter, Humans Must Become Wiser"
 slug: "being-human-in-the-age-of-ai-jeff-burningham"
 date: "2025-11-17T15:05:48.000Z"
 description: "Jeff Burningham is a tech entrepreneur, investor, and author of the book \"The Last Book Written by a Human: Becoming Wise in the Age of AI.\" In a world where artificial intelligence is rapidly advancing to outperform humans at nearly every measurable task, threatening to render human creativity,..."

@@ -1,5 +1,5 @@
 ---
-title: "“AI and Innovation Are Killing Old Business Models” – Here’s What PayPal’s Insider Reveals"
+title: "Mike Todasco: AI Could Replace Creative Work, Transform Medicine and Become Your Best Friend"
 slug: "ai-and-innovation-are-killing-old-business-models-here-s-what-paypal-s-insider-r"
 date: "2025-05-30T17:00:00.000Z"
 description: "This is episode 132 of the Gen Z Diplomat Podcast. Mike Todasco is a former Senior Director of Innovation at PayPal and a current Visiting Fellow at the James Silberrad Brown Center for Artificial Intelligence at San Diego State University, where he focuses on AI&#39;s impact on creativity and in..."

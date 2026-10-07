@@ -1,5 +1,5 @@
 ---
-title: "“It’s Changing How They Think” – Jamie Meyer on Tech’s Hidden Influence on Young People"
+title: "Jamie Meyer: Technology Is Advancing. Humans Are Going Backwards."
 slug: "it-s-changing-how-they-think-jamie-meyer-on-tech-s-hidden-influence-on-young-peo"
 date: "2024-09-01T19:36:57.000Z"
 description: "Jamie is the designer and builder of a highly specialised portfolio of projects and ventures that respectively contribute to developing social, institutional and economic systems. These initiatives address complex societal challenges, invest in humanity, and build a fair, equitable and sustainabl..."

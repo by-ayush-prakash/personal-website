@@ -1,5 +1,5 @@
 ---
-title: "“Hypnotized by the Unknown” – Exploring Ghosts, Minds & Mysteries Beyond Science"
+title: "Dr. Ran Anbar: The Hidden Mind That Controls Your Life"
 slug: "hypnotized-by-the-unknown-exploring-ghosts-minds-mysteries-beyond-science"
 date: "2025-06-10T17:00:00.000Z"
 description: "This is episode 135 of the Gen Z Diplomat Podcast. Dr. Ran Anbar is a leader in clinical hypnosis, and his 20 years of experience have allowed him to successfully treat over 5,000 children. He also served as a professor of pediatrics and medicine and the director of pediatric pulmonology at SUNY..."

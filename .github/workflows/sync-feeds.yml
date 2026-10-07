@@ -2,7 +2,7 @@ name: Sync feeds
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
         run: npm run content:fetch -- --strict
       - run: npm run check && npm run build
-      - name: Commit new feed items
+      - name: Commit feed updates
         run: |
           if git diff --quiet -- src/content && [ -z "$(git ls-files --others --exclude-standard src/content)" ]; then
             exit 0

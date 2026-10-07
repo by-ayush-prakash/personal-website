@@ -1,5 +1,5 @@
 ---
-title: "Canada Built an AI Strategy on Hype - Fenwick McKelvey"
+title: "Fenwick McKelvey: Canada Helped Build Modern AI. Why Can’t It Control What Comes Next?"
 slug: "canada-built-an-ai-strategy-on-hype-fenwick-mckelvey"
 date: "2026-07-13T22:51:59.000Z"
 description: "Fenwick McKelvey joins the podcast to break down how Canada's AI strategy was built on coverage that never questioned it, and why the gap between what the government promised and what actually arrived is bigger than anyone wants to admit. We also get into what happens when a country outsources it..."

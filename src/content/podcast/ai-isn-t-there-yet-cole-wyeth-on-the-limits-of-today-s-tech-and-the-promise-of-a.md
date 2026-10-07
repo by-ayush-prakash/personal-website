@@ -1,5 +1,5 @@
 ---
-title: "“AI Isn’t There Yet” – Cole Wyeth on the Limits of Today’s Tech and the Promise of AIXI"
+title: "Cole Wyeth: Why LLMs Aren't AGI and What AIXI Explains"
 slug: "ai-isn-t-there-yet-cole-wyeth-on-the-limits-of-today-s-tech-and-the-promise-of-a"
 date: "2025-02-20T19:30:00.000Z"
 description: "This is episode 118 of the Gen Z Diplomat Podcast. Cole Wyeth is a mathematician and a computer scientist. Connect with Cole: https://colewyeth.com/ Lesswrong: https://www.lesswrong.com/users/cole-wyeth"

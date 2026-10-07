@@ -1,5 +1,5 @@
 ---
-title: "Parenting in the Digital Age - Christopher Lind | Gen Z Diplomat Podcast #82"
+title: "Christopher Lind: What Raising Seven Children Taught Me About Life, Work and Technology"
 slug: "parenting-in-the-digital-age-christopher-lind-gen-z-diplomat-podcast-82"
 date: "2024-03-08T22:07:38.000Z"
 description: "Christopher Lind is a globally recognized, digital-first HR leader living at the intersection of business, technology, and the human experience. Author of Relentless Intention. Host of Learning Tech Talks. Chief Learning Officer at ChenMed. This is Christopher&#39;s second appearance on the Gen Z..."

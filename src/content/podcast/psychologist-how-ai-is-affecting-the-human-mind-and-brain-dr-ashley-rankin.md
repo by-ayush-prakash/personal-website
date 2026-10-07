@@ -1,5 +1,5 @@
 ---
-title: "Psychologist: How AI Is Affecting The Human Mind and Brain - Dr. Ashley Rankin"
+title: "Ashleigh Rankin: People Trust ChatGPT More Than Each Other"
 slug: "psychologist-how-ai-is-affecting-the-human-mind-and-brain-dr-ashley-rankin"
 date: "2025-11-21T15:00:00.000Z"
 description: "Dr. Ashleigh Rankin holds a doctorate in psychology. Recently, she’s been diving into how new technologies, AI included, are shaping the ways Gen Z and the rest of us understand ourselves, relate to others, and navigate an increasingly digital world. Her perspective brings together human behavior..."

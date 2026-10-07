@@ -1,5 +1,5 @@
 ---
-title: "“Your Brain Is a Universe” – Dr. Karl Friston on Its Beauty and Horror"
+title: "Karl Friston: Your Brain Invents Reality. AI Is Already Extending Your Mind"
 slug: "your-brain-is-a-universe-dr-karl-friston-on-its-beauty-and-horror"
 date: "2025-01-19T01:44:49.000Z"
 description: "Karl Friston is the world’s most frequently cited neuroscientist according to the Paul Allen Institute for Artificial Intelligence.He is Professor of Neurology at University College London and is a theoretical neuroscientist and an authority on brain imaging. He invented statistical parametric ma..."

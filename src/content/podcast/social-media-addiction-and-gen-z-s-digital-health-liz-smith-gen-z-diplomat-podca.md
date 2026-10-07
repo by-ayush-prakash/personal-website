@@ -1,5 +1,5 @@
 ---
-title: "Social Media Addiction and Gen Z's Digital Health - Liz Smith | Gen Z Diplomat Podcast #74"
+title: "Liz Smith: Why Gen Z Is Anxious, Angry and Losing Faith in the Future"
 slug: "social-media-addiction-and-gen-z-s-digital-health-liz-smith-gen-z-diplomat-podca"
 date: "2023-11-03T17:30:00.000Z"
 description: "Liz Smith is a documentary filmmaker. Her work is centred around human rights issues. Liz is curious about what makes human beings tick, and how psychology and environment drive contemporary behaviour. *This episode mainly revolves around her film, &quot;I am Gen Z&quot;, which can be watched her..."

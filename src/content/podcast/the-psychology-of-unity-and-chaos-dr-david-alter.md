@@ -1,5 +1,5 @@
 ---
-title: "The Psychology of Unity and Chaos - Dr. David Alter"
+title: "David Alter: Uncertainty Is Essential to Being Human"
 slug: "the-psychology-of-unity-and-chaos-dr-david-alter"
 date: "2026-02-20T19:00:00.000Z"
 description: "I'm joined by Dr. David Alter, a clinical health psychologist and neuropsychologist who's spent over 30 years studying the intricate connections between mind, brain, and body. Dr. Alter reveals the underlying architecture of human experience, specifically how chaos and unity aren't opposing force..."

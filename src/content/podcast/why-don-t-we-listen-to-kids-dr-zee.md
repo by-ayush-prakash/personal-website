@@ -1,5 +1,5 @@
 ---
-title: "Why Don’t We Listen to Kids? – Dr. Zee"
+title: "Dr. Zee: Why Adults Keep Getting Young People Wrong"
 slug: "why-don-t-we-listen-to-kids-dr-zee"
 date: "2025-07-11T17:00:00.000Z"
 description: "This is episode 137 of the Ayush Prakash Podcast. Dr. Zabina Bhasin (or Dr. Zee) is a Child and Adolescent Psychiatrist, and the visionary founder of Listen to the Kidz. Connect with Dr. Zee: https://www.dr-zee.com https://www.youtube.com/@DrZee_md TikTok: https://www.tiktok.com/@drzee_md Timesta..."
