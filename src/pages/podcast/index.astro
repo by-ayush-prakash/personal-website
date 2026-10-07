@@ -1,12 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { THEMES } from '../../content.config';
 
 const episodes = (await getCollection('podcast')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
-const featured = episodes.filter((ep) => ep.data.featured);
 ---
 
 <BaseLayout
@@ -29,27 +27,8 @@ const featured = episodes.filter((ep) => ep.data.featured);
   </div>
   <hr class="rule" />
 
-  {featured.length > 0 && (
-    <div style="padding-top:38px">
-      <div class="sectionhead"><h2>Start Here</h2></div>
-      <div class="strip">
-        {featured.map((ep) => (
-          <a class="card" href={`/podcast/${ep.data.slug}`}>
-            {(ep.data.theme || ep.data.duration) && <div class="meta">{ep.data.theme ? `${ep.data.theme} · ` : ''}{ep.data.duration ?? ''}</div>}
-            <div class="ct">{ep.data.title}</div>
-            <div class="cd">{ep.data.description}</div>
-          </a>
-        ))}
-      </div>
-    </div>
-  )}
-
-  <div data-archive style="padding-top:clamp(50px,7vw,86px)">
+  <div class="podcast-archive" data-archive style="padding-top:clamp(50px,7vw,86px)">
     <div class="sectionhead"><h2>Episodes</h2><span class="meta" role="status" aria-live="polite" data-count></span></div>
-    <div class="filters">
-      <button class="on" aria-pressed="true" data-theme="all">All</button>
-      {THEMES.map((theme) => <button aria-pressed="false" data-theme={theme}>{theme}</button>)}
-    </div>
     <div class="tools">
       <input placeholder="Search episodes" type="search" aria-label="Search episodes" />
       <button type="button" data-action="surprise">Surprise me</button>
@@ -58,13 +37,10 @@ const featured = episodes.filter((ep) => ep.data.featured);
       <a
         class="row"
         href={`/podcast/${ep.data.slug}`}
-        data-theme={ep.data.theme ?? ''}
         data-search={`${ep.data.title} ${ep.data.description}`.toLowerCase()}
       >
-        <div>
-          <div class="rt">{ep.data.title}</div>
-          <div class="rd">{ep.data.description}</div>
-        </div>
+        <div class="rt">{ep.data.title}</div>
+        <div class="rm">Podcast{ep.data.duration ? ` · ${ep.data.duration}` : ''}</div>
       </a>
     ))}
   </div>
