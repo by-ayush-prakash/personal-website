@@ -1,12 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { themeImage, themeAlt } from '../lib/themeImage';
 const pod = (await getCollection('podcast')).map((e) => ({
   title: e.data.title,
   description: e.data.description,
   date: e.data.date,
-  theme: e.data.theme as string | undefined,
   duration: e.data.duration as string | undefined,
   kind: 'Podcast',
   href: `/podcast/${e.data.slug}`,
@@ -15,15 +13,13 @@ const wri = (await getCollection('writing')).map((e) => ({
   title: e.data.title,
   description: e.data.description,
   date: e.data.date,
-  theme: undefined as string | undefined,
   duration: undefined as string | undefined,
   kind: 'Essay',
   href: `/writing/${e.data.slug}`,
 }));
 const latest = [...pod, ...wri]
   .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
-  .slice(0, 5)
-  .map((it) => ({ ...it, img: themeImage(it.theme) }));
+  .slice(0, 5);
 
 ---
 
@@ -87,7 +83,6 @@ const latest = [...pod, ...wri]
   <div class="strip">
     {latest.map((it) => (
       <a class="card" href={it.href}>
-        <div class="ph"><img src={it.img} alt={themeAlt(it.theme)} /></div>
         <div class="meta">{it.kind}{'duration' in it && it.duration ? ` \u00b7 ${it.duration}` : ''}</div>
         <div class="ct">{it.title}</div>
         <div class="cd">{it.description.length > 110 ? it.description.slice(0, 110).trimEnd() + '\u2026' : it.description}</div>
