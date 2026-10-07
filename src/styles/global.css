@@ -44,8 +44,8 @@ nav.main a.on{opacity:1;border-bottom:1px solid var(--ink)}
 
 /* --- horizontal card strip --- */
 .strip{display:flex;gap:clamp(18px,2.2vw,32px);padding-top:clamp(28px,3.6vw,46px);overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:6px}
-.strip::-webkit-scrollbar{height:1px}
-.strip::-webkit-scrollbar-thumb{background:var(--hair)}
+.strip{scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
 .strip .card{flex:0 0 clamp(210px,20vw,268px);scroll-snap-align:start}
 .strip::after{content:"";flex:0 0 1px}
 .card{text-decoration:none;cursor:pointer}
