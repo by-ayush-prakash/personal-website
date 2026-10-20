@@ -171,13 +171,15 @@ Action: Enquire
 
 ## About
 
-> Ayush Prakash studies how increasingly person-like AI systems are reshaping cognition, identity, agency, and human development in the first AI-native generation, and translates emerging research into public frameworks, policy ideas, and cultural understanding.
+> A promising technology is not yet a company. Ayush Prakash works on the decisions that can make it one. He has served as Director of Corporate Strategy and raised $3.5M. His focus is on giving AI ventures a clear direction: choosing a problem worth solving, understanding the people it affects, making the case for capital, and bringing others around the work.
 
-> He is the author of AI for Gen Z, co-author of published work with neuroscientist Karl Friston in The Montreal Review and Dr. Ran Anbar in Psychology Today, and host of the Ayush Prakash Podcast: 150+ episodes with researchers and thinkers including Friston and Harvard astrophysicist Avi Loeb.
+> For Ayush, the question is why a company should exist in the first place. AI can change how people think, work, relate, and decide whom to trust. Building around it calls for a credible business case and a serious understanding of what the technology will do in people’s lives. Those questions shape the ventures he wants to build.
 
-> His current project is The First AI-Native Generation, a flagship research report publishing November 2026.
+> He is the author of *AI for Gen Z*, a book about coming of age inside digital systems and the ways algorithms and AI shape attention, identity, relationships, and work. His published writing includes “The Infinity of the Brain and the Void of the Machine” in *The Montréal Review* and “The Risks of AI and Social Media for the Developing Brain” in *Psychology Today*.
 
-> Based in Montreal. English and French.
+> Ayush also hosts *The Ayush Prakash Podcast*, with more than 150 conversations spanning computing, creativity, health, education, philosophy, and public policy. The conversations keep his thinking close to the people developing technology, studying its effects, and living with its consequences.
+
+> He lives in Montreal and enjoys avoiding potholes (even though he prefers to walk everywhere).
 
 ---
 
