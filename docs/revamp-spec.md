@@ -24,7 +24,7 @@ Lede:
 | --- | --- |
 | RESEARCH | Co-authored with Karl Friston in *The Montreal Review* `[LINK]` |
 | BOOK | AI for Gen Z, the first treatment of what AI means for the generation growing up inside it |
-| PRACTICE | Chief of Staff at New Sapience. Non-LLM machine cognition, from the design level. |
+| PRACTICE | Director at the Center for Innovating the Future. |
 
 ### Book feature
 
@@ -163,7 +163,7 @@ Lede: `Three talks, adapted to length and audience.`
 
 ### Booking
 
-> Ayush Prakash is Chief of Staff at New Sapience and host of the Ayush Prakash Podcast. He writes on AI and human development, and is based in Montreal. English and French.
+> Ayush Prakash hosts the Ayush Prakash Podcast. He writes on AI and human development, and is based in Montreal. English and French.
 
 Action: Enquire
 
@@ -172,8 +172,6 @@ Action: Enquire
 ## About
 
 > Ayush Prakash studies how increasingly person-like AI systems are reshaping cognition, identity, agency, and human development in the first AI-native generation, and translates emerging research into public frameworks, policy ideas, and cultural understanding.
-
-> He is Chief of Staff at New Sapience, a deterministic-AI company built by veterans of DARPA, NASA, and the NSA, where he works on non-LLM machine cognition and leads business operations and institutional capital strategy.
 
 > He is the author of AI for Gen Z, co-author of published work with neuroscientist Karl Friston in The Montreal Review and Dr. Ran Anbar in Psychology Today, and host of the Ayush Prakash Podcast: 150+ episodes with researchers and thinkers including Friston and Harvard astrophysicist Avi Loeb.
 
